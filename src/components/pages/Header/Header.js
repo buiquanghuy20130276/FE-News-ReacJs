@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {
     MDBContainer,
     MDBNavbar,
@@ -15,19 +15,18 @@ import {
     MDBDropdownItem,
     MDBCollapse,
 } from 'mdb-react-ui-kit';
-import './Header.css'
+import './Header.module.css'
+
+import HeaderData from "./HeaderData";
+
 export default function Header() {
     const [showBasic, setShowBasic] = useState(false);
-
     return (
         <MDBNavbar expand='lg' light bgColor='light'>
             <MDBContainer fluid>
-                <MDBNavbarBrand href='#'><img
-                    src='https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.webp'
-                    height='30'
-                    alt=''
-                    loading='lazy'
-                /></MDBNavbarBrand>
+                <MDBNavbarBrand href='#'><img alt="Báo điện tử Dân trí - Tin tức cập nhật liên tục 24/7" height="39"
+                                              src="https://cdnweb.dantri.com.vn/dist/static-logo.1-0-1.742f36bc45f3443d0e59.svg"
+                                              width="132"/></MDBNavbarBrand>
 
                 <MDBNavbarToggler
                     aria-controls='navbarSupportedContent'
@@ -35,42 +34,41 @@ export default function Header() {
                     aria-label='Toggle navigation'
                     onClick={() => setShowBasic(!showBasic)}
                 >
-                    <MDBIcon icon='bars' fas />
+                    <MDBIcon icon='bars' fas/>
                 </MDBNavbarToggler>
 
                 <MDBCollapse navbar show={showBasic}>
                     <MDBNavbarNav className='mr-auto mb-2 mb-lg-0'>
-                        <MDBNavbarItem>
-                            <MDBNavbarLink active aria-current='page' href='#'>
-                                Home
-                            </MDBNavbarLink>
-                        </MDBNavbarItem>
-                        <MDBNavbarItem>
-                            <MDBNavbarLink href='#'>Link</MDBNavbarLink>
-                        </MDBNavbarItem>
+                        {HeaderData.map((header, index) =>{
+                            console.log(header.dropdown)
+                            if(header.dropdown){
+                                return(
+                                    <MDBNavbarItem>
 
-                        <MDBNavbarItem>
-                            <MDBDropdown>
-                                <MDBDropdownToggle tag='a' className='nav-link' role='button'>
-                                    Dropdown
-                                </MDBDropdownToggle>
-                                <MDBDropdownMenu>
-                                    <MDBDropdownItem link>Action</MDBDropdownItem>
-                                    <MDBDropdownItem link>Another action</MDBDropdownItem>
-                                    <MDBDropdownItem link>Something else here</MDBDropdownItem>
-                                </MDBDropdownMenu>
-                            </MDBDropdown>
-                        </MDBNavbarItem>
+                                        <MDBDropdown>
+                                            <MDBDropdownToggle tag='a' className='nav-link' role='button'>
+                                                {header.name}
+                                            </MDBDropdownToggle>
+                                            <MDBDropdownMenu>
+                                                <MDBDropdownItem link>Action</MDBDropdownItem>
+                                                <MDBDropdownItem link>Another action</MDBDropdownItem>
+                                                <MDBDropdownItem link>Something else here</MDBDropdownItem>
+                                            </MDBDropdownMenu>
+                                        </MDBDropdown>
 
-                        <MDBNavbarItem>
-                            <MDBNavbarLink disabled href='#' tabIndex={-1} aria-disabled='true'>
-                                Disabled
-                            </MDBNavbarLink>
-                        </MDBNavbarItem>
+                                    </MDBNavbarItem>
+                                )
+                            }else{
+                                return (<MDBNavbarItem>
+                                    <MDBNavbarLink href='#' tabIndex={-1} aria-disabled='true'>
+                                        {header.name}
+                                    </MDBNavbarLink>
+                                </MDBNavbarItem>)
+                            }
+                        })}
                     </MDBNavbarNav>
-
-                    <form className='d-flex input-group w-auto'>
-                        <input type='search' className='form-control' placeholder='Type query' aria-label='Search' />
+                    <form className='d-flex input-wrapper w-75'>
+                        <input type='search' className='form-control' placeholder='Type query' aria-label='Search'/>
                         <MDBBtn color='primary'>Search</MDBBtn>
                     </form>
                 </MDBCollapse>
