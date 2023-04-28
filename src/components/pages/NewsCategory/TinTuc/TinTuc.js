@@ -27,13 +27,13 @@ const tabs = [
 function TinTuc() {
     const [title, setTitle] = useState('')
     const [type, setType] = useState('tin-tuc-1001')
-
     const feed = useRssFeed(type);
     return (
         <div className={style['wrapper']}>
             <div className={style['sideBar']}>
                 <ul className={style['list-item']}>{tabs.map((tab, index) => (
-                    <li className={tab.type === type ?style['item-active']:style['item']} key={index} onClick={() => setType(tab.type)}>
+                    <li className={tab.type === type ? style['item-active'] : style['item']} key={index}
+                        onClick={() => setType(tab.type)}>
                         <FontAwesomeIcon icon={faAngleDoubleRight}/>
                         <span>{tab.title}</span>
                     </li>
@@ -44,9 +44,16 @@ function TinTuc() {
             <div className={style['content']}>
                 <div>
 
-                    <ul>
+                    <ul className={style['content-list']}>
                         {feed.map(post => (
-                            <li key={post.title}>{post.title}</li>
+                            <li className={style['content-item']} key={post.title}>
+                                <img className={style['img-content-item']} src={post.imageUrl} alt={post.title}/>
+                                <div className={style['block-content-item']}>
+                                    <h3 className={style['content-item-title']}>{post.title}</h3>
+                                    <p>{post.description}</p>
+                                </div>
+
+                            </li>
                         ))}
                     </ul>
                 </div>

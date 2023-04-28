@@ -14,13 +14,22 @@ export const useRssFeed = (type) => {
                     if (err) {
                         console.error(err);
                     } else {
-                        const items = result.rss.channel[0].item.map(item => ({
-                            title: item.title[0],
-                            link: item.link[0],
-                            description: item.description[0],
-                            pubDate: item.pubDate[0],
-                            guid: item.guid[0]
-                        }));
+                        const items = result.rss.channel[0].item.map(item => {
+                            const description = item.description[0];
+                            const imageUrlRegex = /<img.*?src="(.*?)"/;
+                            const imageUrlMatch = description.match(imageUrlRegex);
+                            const imageUrl = imageUrlMatch ? imageUrlMatch[1] : null;
+                            const cleanedDescription = description.replace(/<\/?(a|img)[^>]*>/g, '');
+
+                            return {
+                                title: item.title[0],
+                                link: item.link[0],
+                                description: cleanedDescription,
+                                pubDate: item.pubDate[0],
+                                guid: item.guid[0],
+                                imageUrl: imageUrl
+                            }
+                        });
                         setFeed(items);
                     }
                 });
