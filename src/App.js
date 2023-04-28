@@ -1,20 +1,21 @@
 import React from 'react';
-import {MDBBtn, MDBContainer} from 'mdb-react-ui-kit';
 import Header from "./components/pages/Header/Header";
-import SideBar from "./components/pages/SideBar/SideBar";
-import Content from "./components/pages/Content/Content";
-import style from './App.module.css'
+import style from './App.module.scss'
+import TinTuc from "./components/pages/NewsCategory/TinTuc/TinTuc";
+import {MDBContainer} from "mdb-react-ui-kit";
 
 function App() {
+
     return (
         <MDBContainer fluid>
             <Header/>
             <div className={style['wrapper']}>
-                <SideBar/>
-                <Content/>
+                <TinTuc/>
             </div>
         </MDBContainer>
+
     );
 }
 
 export default App;
+
