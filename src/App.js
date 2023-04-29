@@ -1,8 +1,8 @@
 import React from 'react';
 import Header from "./components/pages/Header/Header";
 import style from './App.module.scss'
-import TinTuc from "./components/pages/NewsCategory/TinTuc/TinTuc";
 import {MDBContainer} from "mdb-react-ui-kit";
+import {Outlet} from "react-router-dom";
 
 function App() {
 
@@ -10,7 +10,7 @@ function App() {
         <MDBContainer fluid>
             <Header/>
             <div className={style['wrapper']}>
-                <TinTuc/>
+                <Outlet></Outlet>
             </div>
         </MDBContainer>
 
