@@ -1,15 +1,15 @@
 import React, {useState} from 'react';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faAngleDoubleRight} from "@fortawesome/free-solid-svg-icons";
-import style from './TinTuc.module.scss'
+import style from './TheGioi.module.scss'
 import {useRssFeed} from "../../../../data/useRssFeed";
 import DataSideBar from "./data/SideBarData";
 
 const tabs = DataSideBar
 
-function TinTuc() {
-    const [title, setTitle] = useState('Tin tức')
-    const [type, setType] = useState('tin-tuc-1001')
+function TheGioi() {
+    const [title, setTitle] = useState('Thế giới')
+    const [type, setType] = useState('the-gioi-1007')
     const feed = useRssFeed(type);
     return (
         <div className={style['wrapper']}>
@@ -30,8 +30,8 @@ function TinTuc() {
             <div className={style['content']}>
                 <div className={style['breadcrumb']}>
                     <ol>
-                        <li>Tin Tức</li>
-                        {title==='Tin tức'?'':(<li className={style['breadcrumb-active']}><span>/</span> {title==='Tin tức'?'':title}</li>)}
+                        <li>Thế giới</li>
+                        {title==='Thế giới'?'':(<li className={style['breadcrumb-active']}><span>/</span> {title==='Thế giới'?'':title}</li>)}
 
                     </ol>
                 </div>
@@ -54,4 +54,4 @@ function TinTuc() {
     )
 }
 
-export default TinTuc
+export default TheGioi

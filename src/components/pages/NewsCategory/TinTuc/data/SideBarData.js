@@ -1,21 +1,19 @@
-const data = [
+const DataSideBar = [
     {
-        name: 'Tin tức',
-        type: 'tin-tuc',
-        listType: [
-            {
-                name: 'Chính trị',
-                path: '/tin-tuc//chinh-tri',
-            },
-            {
-                name: 'Xã hội',
-                path: '/tin-tuc/xa-hoi',
-            },
-            {
-                name: 'Phóng sự',
-                path: '/tin-tuc/phong-su',
-            }
-        ]
+        title: 'Kính đa tròng',
+        type: 'kinh-da-trong-1059'
+    },
+    {
+        title: 'Chính trị',
+        type: 'chinh-tri-1002'
+    },
+    {
+        title: 'Xã hội',
+        type: 'xa-hoi-1003'
+    },
+    {
+        title: 'Phóng sự',
+        type: 'phong-su-ghi-chep-1182'
     },
 ]
-export  default data
+export  default DataSideBar

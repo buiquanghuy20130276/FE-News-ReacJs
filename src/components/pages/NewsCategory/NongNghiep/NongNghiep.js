@@ -1,15 +1,15 @@
 import React, {useState} from 'react';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faAngleDoubleRight} from "@fortawesome/free-solid-svg-icons";
-import style from './TinTuc.module.scss'
+import style from './NongNghiep.module.scss'
 import {useRssFeed} from "../../../../data/useRssFeed";
 import DataSideBar from "./data/SideBarData";
 
 const tabs = DataSideBar
 
-function TinTuc() {
-    const [title, setTitle] = useState('Tin tức')
-    const [type, setType] = useState('tin-tuc-1001')
+function NongNghiep() {
+    const [title, setTitle] = useState('Nông nghiệp')
+    const [type, setType] = useState('nong-nghiep-1009')
     const feed = useRssFeed(type);
     return (
         <div className={style['wrapper']}>
@@ -30,8 +30,8 @@ function TinTuc() {
             <div className={style['content']}>
                 <div className={style['breadcrumb']}>
                     <ol>
-                        <li>Tin Tức</li>
-                        {title==='Tin tức'?'':(<li className={style['breadcrumb-active']}><span>/</span> {title==='Tin tức'?'':title}</li>)}
+                        <li>Nông nghiệp</li>
+                        {title==='Nông nghiệp'?'':(<li className={style['breadcrumb-active']}><span>/</span> {title==='Nông nghiệp'?'':title}</li>)}
 
                     </ol>
                 </div>
@@ -54,4 +54,4 @@ function TinTuc() {
     )
 }
 
-export default TinTuc
+export default NongNghiep
