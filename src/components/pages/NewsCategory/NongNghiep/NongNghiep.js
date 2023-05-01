@@ -1,9 +1,12 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faAngleDoubleRight} from "@fortawesome/free-solid-svg-icons";
 import style from './NongNghiep.module.scss'
 import {useRssFeed} from "../../../../data/useRssFeed";
 import DataSideBar from "./data/SideBarData";
+import {Link} from "react-router-dom";
+import {handleString} from "../../../toolkit/handleString";
+import SearchContext from "../../Header/SearchContext";
 
 const tabs = DataSideBar
 
@@ -11,6 +14,13 @@ function NongNghiep() {
     const [title, setTitle] = useState('Nông nghiệp')
     const [type, setType] = useState('nong-nghiep-1009')
     const feed = useRssFeed(type);
+    const {searchTerm}=useContext(SearchContext)
+    const filteredFeed = feed.filter((post) => {
+        const postTitle = post.title.toLowerCase();
+        const postDescription = post.description.toLowerCase();
+        const searchTermLowerCase = searchTerm.toLowerCase();
+        return (postTitle.includes(searchTermLowerCase) || postDescription.includes(searchTermLowerCase));
+    });
     return (
         <div className={style['wrapper']}>
             <div className={style['sideBar']}>
@@ -37,15 +47,16 @@ function NongNghiep() {
                 </div>
                 <div>
                     <ul className={style['content-list']}>
-                        {feed.map(post => (
-                            <li className={style['content-item']} key={post.title}>
-                                <img className={style['img-content-item']} src={post.imageUrl} alt={post.title}/>
-                                <div className={style['block-content-item']}>
-                                    <h3 className={style['content-item-title']}>{post.title}</h3>
-                                    <p>{post.description}</p>
-                                </div>
-
-                            </li>
+                        {filteredFeed.map((post, index) => (
+                            <Link style={{ color: "#737373" }} key={index} to={`/detail/${handleString(post.link)}`}>
+                                <li className={style['content-item']}>
+                                    <img className={style['img-content-item']} src={post.imageUrl} alt={post.title} />
+                                    <div className={style['block-content-item']}>
+                                        <h3 className={style['content-item-title']}>{post.title}</h3>
+                                        <p>{post.description}</p>
+                                    </div>
+                                </li>
+                            </Link>
                         ))}
                     </ul>
                 </div>

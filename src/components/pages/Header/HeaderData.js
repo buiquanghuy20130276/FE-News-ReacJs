@@ -36,8 +36,16 @@ const HeaderData = [
         path: "/doi-song"
     },
     {
+        name: "Công nghệ",
+        path: "/cong-nghe"
+    },
+    {
+        name: "Chuyển động số",
+        path: "/chuyen-dong-so"
+    },
+    {
         name: "Văn hóa - giải trí",
-        path: "/van-hoa-giai-tri"
+        path: "/vh-gt"
     }
 
 
