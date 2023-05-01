@@ -19,9 +19,9 @@ export default function Header() {
             </div>
             <div className={style['navBar']}>
                 <ul className={style['list-item']}>{HeaderData.map((data, index) => (
-                    <Link to={data.path} className={data.path===active ? style['item-active']:style['item']} onClick={()=>setActive(data.path)
+                    <Link key={index} to={data.path} className={data.path===active ? style['item-active']:style['item']} onClick={()=>setActive(data.path)
                     }>
-                        <li key={index}>
+                        <li >
                             {data.name}
                         </li>
                     </Link>

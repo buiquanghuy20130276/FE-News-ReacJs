@@ -3,6 +3,7 @@ import Header from "./components/pages/Header/Header";
 import style from './App.module.scss'
 import {MDBContainer} from "mdb-react-ui-kit";
 import {Outlet} from "react-router-dom";
+import DetailNews from "./components/pages/DetailNews/DetailNews";
 
 function App() {
 
@@ -10,7 +11,8 @@ function App() {
         <MDBContainer fluid>
             <Header/>
             <div className={style['wrapper']}>
-                <Outlet></Outlet>
+                <Outlet>
+                </Outlet>
             </div>
         </MDBContainer>
 

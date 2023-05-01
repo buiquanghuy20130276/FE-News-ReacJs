@@ -4,6 +4,8 @@ import {faAngleDoubleRight} from "@fortawesome/free-solid-svg-icons";
 import style from './TinTuc.module.scss'
 import {useRssFeed} from "../../../../data/useRssFeed";
 import DataSideBar from "./data/SideBarData";
+import {Link} from "react-router-dom";
+import {handleString} from "../../../toolkit/handleString";
 
 const tabs = DataSideBar
 
@@ -31,21 +33,25 @@ function TinTuc() {
                 <div className={style['breadcrumb']}>
                     <ol>
                         <li>Tin Tức</li>
-                        {title==='Tin tức'?'':(<li className={style['breadcrumb-active']}><span>/</span> {title==='Tin tức'?'':title}</li>)}
+                        {title === 'Tin tức' ? '' : (
+                            <li className={style['breadcrumb-active']}><span>/</span> {title === 'Tin tức' ? '' : title}
+                            </li>)}
 
                     </ol>
                 </div>
                 <div>
-                    <ul className={style['content-list']}>
-                        {feed.map(post => (
-                            <li className={style['content-item']} key={post.title}>
-                                <img className={style['img-content-item']} src={post.imageUrl} alt={post.title}/>
-                                <div className={style['block-content-item']}>
-                                    <h3 className={style['content-item-title']}>{post.title}</h3>
-                                    <p>{post.description}</p>
-                                </div>
 
-                            </li>
+                    <ul className={style['content-list']}>
+                        {feed.map((post, index) => (
+                            <Link style={{color: "#737373"}} key={index} to={`/detail/${handleString(post.link)}`}>
+                                <li className={style['content-item']}>
+                                    <img className={style['img-content-item']} src={post.imageUrl} alt={post.title}/>
+                                    <div className={style['block-content-item']}>
+                                        <h3 className={style['content-item-title']}>{post.title}</h3>
+                                        <p>{post.description}</p>
+                                    </div>
+                                </li>
+                            </Link>
                         ))}
                     </ul>
                 </div>
