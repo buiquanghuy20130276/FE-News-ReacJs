@@ -7,6 +7,12 @@ import NongNghiep from "../pages/NewsCategory/NongNghiep/NongNghiep";
 import PhapLuat from "../pages/NewsCategory/PhapLuat/PhapLuat";
 import DetailNews, {loadNewsDetail} from "../pages/DetailNews/DetailNews";
 import Error from "../pages/Error/Error";
+import KinhTe from "../pages/NewsCategory/KinhTe/KinhTe";
+import GiaoDuc from "../pages/NewsCategory/GiaoDuc/GiaoDuc";
+import DoiSong from "../pages/NewsCategory/DoiSong/DoiSong";
+import CongNghe from "../pages/NewsCategory/CongNghe/CongNghe";
+import VhGt from "../pages/NewsCategory/VhGt/VhGt";
+import ChuyenDongSo from "../pages/NewsCategory/ChuyenDongSo/ChuyenDongSo";
 
 const Router = createBrowserRouter([{
     path: '/',
@@ -37,6 +43,29 @@ const Router = createBrowserRouter([{
         {
             path:'phap-luat',
             element: <PhapLuat/>
+        },
+        {
+            path:'kinh-te',
+            element: <KinhTe/>
+        },
+        {
+            path:'giao-duc',
+            element: <GiaoDuc/>
+        },{
+            path:'doi-song',
+            element: <DoiSong/>
+        },
+        {
+            path:'cong-nghe',
+            element: <CongNghe/>
+        },
+        {
+            path:'vh-gt',
+            element: <VhGt/>
+        },
+        {
+            path:'chuyen-dong-so',
+            element: <ChuyenDongSo/>
         },
     ]
 
