@@ -1,7 +1,7 @@
 const DataSideBar = [
     {
         title: 'Tin nông nghiệp',
-        type: 'tin-nong-nghiep-1012.'
+        type: 'tin-nong-nghiep-1012'
     },
     {
         title: 'Muôn cách làm giàu',
