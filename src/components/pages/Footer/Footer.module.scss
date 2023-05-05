@@ -58,8 +58,10 @@
     
   .framBox{
       display: flex;
+      width: 1200px;
       
       .size{
+        width: 200px;
         padding: 18px 35px;
           
         h1{
@@ -93,10 +95,6 @@
         .font-style{
           font-size: 15px;
           font-weight: 600;
-          a{
-            display: block;
-            color:#6c6e70;
-          }
         }
       }
       .info-right{
