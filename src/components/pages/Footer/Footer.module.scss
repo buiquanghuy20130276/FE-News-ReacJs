@@ -57,32 +57,33 @@
   box-shadow: 0 4px 12px 0 rgb(0 0 0 / 7%);
     
   .framBox{
-      display: flex;
       width: 1200px;
-      
-      .size{
-        width: 200px;
-        padding: 18px 35px;
-          
-        h1{
-              font-size: 1rem;
-          }
-          li{
-              font-size: 12px;
-              color:#6c6e70;
-              line-height: 1.4rem;
-              cursor: pointer;
-              &:hover {
-                background-color: #f0f0f0;
-                color: #008837;
-                border-radius: 5px;
-        
-                a {
+      .footer-part{
+        display: flex;
+        .size{
+          width: 20%;
+          padding: 18px 35px;
+            
+          h1{
+                font-size: 1rem;
+            }
+            li{
+                font-size: 12px;
+                color:#6c6e70;
+                line-height: 1.4rem;
+                cursor: pointer;
+                &:hover {
+                  background-color: #f0f0f0;
                   color: #008837;
+                  border-radius: 5px;
+          
+                  a {
+                    color: #008837;
+                  }
+          
                 }
-        
-              }
-          }
+            }
+        }
       }
     }
     .info{

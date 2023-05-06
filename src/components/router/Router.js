@@ -1,6 +1,7 @@
 import {createBrowserRouter} from "react-router-dom";
 import TinTuc from "../pages/NewsCategory/TinTuc/TinTuc";
 import App from "../../App";
+import TrangChu from "../pages/NewsCategory/TrangChu/TrangChu";
 import TheGioi from "../pages/NewsCategory/TheGioi/TheGioi";
 import TheThao from "../pages/NewsCategory/TheThao/TheThao";
 import NongNghiep from "../pages/NewsCategory/NongNghiep/NongNghiep";
@@ -18,6 +19,10 @@ const Router = createBrowserRouter([{
     path: '/',
     element: <App/>,
     children: [
+        {
+            path: 'trang-chu',
+            element: <TrangChu/>
+        },
         {
             path: 'tin-tuc',
             element: <TinTuc/>,

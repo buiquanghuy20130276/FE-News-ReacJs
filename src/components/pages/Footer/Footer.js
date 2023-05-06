@@ -41,7 +41,7 @@ export default function Footer() {
       <div>
         <div className={style['framBox']}>
 
-        <div>
+        <div className={style['footer-part']}>
         <div className={style['size']}>
             <h5 className='text-uppercase titleMenu'>Tin Tức</h5>
 
@@ -149,7 +149,7 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div>
+        <div className={style['footer-part']}>
         <div className={style['size']}>
             <h5 className='text-uppercase mb-0'>Văn hóa - Giải trí</h5>
 

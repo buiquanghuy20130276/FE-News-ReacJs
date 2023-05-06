@@ -1,7 +1,5 @@
 import React, {useContext, useState} from 'react';
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faAngleDoubleRight} from "@fortawesome/free-solid-svg-icons";
-import style from './VhGt.module.scss'
+import style from './TrangChu.module.scss'
 import {useRssFeed} from "../../../../data/useRssFeed";
 import DataSideBar from "./data/SideBarData";
 import {Link} from "react-router-dom";
@@ -10,9 +8,9 @@ import SearchContext from "../../Header/SearchContext";
 
 const tabs = DataSideBar
 
-function VhGt() {
+function TrangChu() {
     const [title, setTitle] = useState('Chuyện của sao')
-    const [type, setType] = useState('kinh-te-1004')
+    const [type, setType] = useState('chuyen-cua-sao-1105')
     const feed = useRssFeed(type);
     const {searchTerm}=useContext(SearchContext)
     const filteredFeed = feed.filter((post) => {
@@ -23,30 +21,21 @@ function VhGt() {
     });
     return (
         <div className={style['wrapper']}>
-            <div className={style['sideBar']}>
+             <div className={style['sideBar']}>
                 <ul className={style['list-item']}>{tabs.map((tab, index) => (
                     <li className={tab.type === type ? style['item-active'] : style['item']} key={index}
                         onClick={() => {
                             setTitle(tab.title)
                             setType(tab.type)
                         }}>
-                        <FontAwesomeIcon icon={faAngleDoubleRight}/>
                         <span>{tab.title}</span>
                     </li>
                 ))}
 
                 </ul>
             </div>
-            <div className={style['content']}>
-                <div className={style['breadcrumb']}>
-                    <ol>
-                        <li>Kinh tế</li>
-                        {title==='Kinh tế'?'':(<li className={style['breadcrumb-active']}><span>/</span> {title==='Kinh tế'?'':title}</li>)}
-
-                    </ol>
-                </div>
-                <div>
-                    <ul className={style['content-list']}>
+            <div className={style['box-new']}>
+            <ul className={style['content-list']}>
                         {filteredFeed.map((post, index) => (
                             <Link style={{ color: "#737373" }} key={index} to={`/detail/${handleString(post.link)}`}>
                                 <li className={style['content-item']}>
@@ -59,10 +48,9 @@ function VhGt() {
                             </Link>
                         ))}
                     </ul>
-                </div>
             </div>
         </div>
     )
 }
 
-export default VhGt
+export default TrangChu
