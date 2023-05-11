@@ -11,9 +11,17 @@ function useGetDetailNews(url) {
                 const html = response.data;
                 const $ = cheerio.load(html);
 
+                const title = $("div.detail-main .dt-title h2 span.title").text();
+                const sapo = $("div.detail-main div.sapo").text();
+                const content = $("div.detail-main div.dt-content div.entry-body").html();
+                const contentNode = document.createRange().createContextualFragment(content);
+                const relateNewsBox = $("div.detail-main div.dt-content div.box-samecat ul.samecat-news").html();
+                const relatedNewsBoxNode = document.createRange().createContextualFragment(relateNewsBox);
                 const result = {
-                    content: content,
-                    RelatedNews:relatedNewsBox,
+                    title:title,
+                    sapo:sapo,
+                    content: contentNode,
+                    RelatedNews:relatedNewsBoxNode,
                 };
                 setNewsDetail(result);
             })

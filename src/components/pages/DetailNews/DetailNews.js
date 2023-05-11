@@ -7,7 +7,6 @@ import RelatedNewsBox from "./Component/RelatedNewsBox";
 import React from "react";
 
 export const loadNewsDetail = async ({params}) => {
-    // const dataNews =params.news
     const {link} = params
     const Url = "/api/" + link
     console.log(Url)
@@ -15,9 +14,8 @@ export const loadNewsDetail = async ({params}) => {
 }
 
 function DetailNews() {
-    const Url = useLoaderData()
-    const data = useGetDetailNews(Url)
-    const back = useNavigate();
+    const Url = useLoaderData();
+    const data = useGetDetailNews(Url);
     return (
         <div className="container">
             <div className="d-flex flex-column mb-3">
