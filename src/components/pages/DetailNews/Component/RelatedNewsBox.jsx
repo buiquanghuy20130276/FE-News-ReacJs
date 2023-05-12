@@ -1,10 +1,18 @@
-import React from 'react';
-import { MDBContainer } from 'mdb-react-ui-kit';
+import React, { useEffect, useRef } from 'react';
 
-function Post(props) {
-    const {content} =props;
+function RelatedNewsBox(props) {
+    const { content } = props;
+    const relatedRef = useRef(null);
+
+    useEffect(() => {
+        if (relatedRef.current) {
+            relatedRef.current.appendChild(content);
+        }
+    }, [content]);
+
     return (
-        <div>{content}</div>
+        <div className="box-samecat" ref={relatedRef}></div>
     );
 }
-export default Post
+
+export default RelatedNewsBox;
