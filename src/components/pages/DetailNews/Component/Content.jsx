@@ -1,11 +1,16 @@
 import React, { useEffect, useRef } from 'react';
 
-function Post(props) {
+function Content(props) {
     const { content } = props;
     const contentRef = useRef(null);
 
     useEffect(() => {
         if (contentRef.current && content instanceof Node) {
+            const contentElement = contentRef.current;
+            while(contentElement.firstChild) {
+                console.log("1. remove: "+contentElement.firstChild);
+                contentElement.removeChild(contentElement.firstChild);
+            }
             contentRef.current.appendChild(content);
         }
     }, [content]);
@@ -15,4 +20,4 @@ function Post(props) {
     );
 }
 
-export default Post;
+export default Content;
