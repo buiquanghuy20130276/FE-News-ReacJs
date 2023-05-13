@@ -13,18 +13,10 @@ function useGetDetailNews(url) {
 
                 console.log("1. url "+url);
                 $('div.detail-main div.dt-content div.entry-body div.kbwscwl-relatedbox').remove();
-
-                console.log("2. bỏ after");
                 const entryBody = $("div.detail-main div.dt-content div.entry-body");
-                console.log("3. antrybody: "+entryBody);
                 const contents = entryBody.contents();
-                console.log("4. contents: "+contents);
-                // const entryBodyContent = contents.slice(0, contents.index(entryBody));
-                // console.log("5. entryBodyContent: ");
                 const range = document.createRange();
-                console.log("6. range");
                 const entryBodyFragment = range.createContextualFragment(contents);
-                console.log("7. entryBodyFragment: "+entryBodyFragment);
 
                 const title = $("div.detail-main .dt-title h2 span.title").text();
 

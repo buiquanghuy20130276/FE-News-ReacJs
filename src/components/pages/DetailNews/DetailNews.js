@@ -1,6 +1,5 @@
 import useGetDetailNews from "../../../data/useGetDetailNews";
 import {useLoaderData, useNavigate, useParams} from "react-router-dom";
-import Content from "./Component/Content";
 import Comment from "./Component/Comment";
 import RelatedNewsBox from "./Component/RelatedNewsBox";
 import React, {useEffect, useMemo, useState} from "react";
@@ -8,16 +7,11 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faClock, faUser} from "@fortawesome/free-solid-svg-icons";
 import style from './style.css';
 import * as url from "url";
+import Content from "./Component/Content";
 
-async function getNews(url) {
-    const link = await useGetNewsAPI(url)
-    const data = await  useGetDetailNews(link)
-    return {data}
-}
 export const loadNewsDetail = async ({params}) => {
     const {link} = params
     const Url = "/api/" + link
-    console.log(Url)
     return Url;
 }
 
@@ -25,6 +19,7 @@ function DetailNews() {
     const Url = useLoaderData();
     const memoizedUrl = useMemo(() => Url, []);
     const data = useGetDetailNews(memoizedUrl);
+    const back = useNavigate();
     return (
         <div className="wrapper">
             <div className="wrapmain">
@@ -48,14 +43,17 @@ function DetailNews() {
                                         <div className="sapo">{data.sapo}</div>
                                         <Content content={data.content}/>
                                         {/*<RelatedNewsBox relateNews = {data.relatedNews}/>*/}
-                                        <Comment/>
                                     </>
                                 ) : (<p>Loading...</p>)
                             }
                         </div>
+                        <Comment/>
                     </div>
                 </div>
-                <div className="sidebar"></div>
+                <div className="sidebar">
+                    <button className={style['btn-back']} onClick={()=>back((-1))}>Trở về</button>
+                    <div className="banner"><img src={"https://d1j8r0kxyu9tj8.cloudfront.net/files/1582632981Gp4bWNtKphm3XfD.jpg"}/> </div>
+                </div>
             </div>
         </div>
     )

@@ -8,7 +8,6 @@ function Content(props) {
         if (contentRef.current && content instanceof Node) {
             const contentElement = contentRef.current;
             while(contentElement.firstChild) {
-                console.log("1. remove: "+contentElement.firstChild);
                 contentElement.removeChild(contentElement.firstChild);
             }
             contentRef.current.appendChild(content);
