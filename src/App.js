@@ -8,7 +8,7 @@ import SearchContext from "./components/pages/Header/SearchContext";
 function App() {
     const [searchTerm, setSearchTerm] = useState('')
     return (
-        <MDBContainer fluid>
+        <MDBContainer>
             <SearchContext.Provider value={{searchTerm,setSearchTerm}}>
                 <Header/>
                 <div className={style['wrapper']}>
