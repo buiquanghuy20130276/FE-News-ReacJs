@@ -1,9 +1,10 @@
 import React from 'react';
 
-function Post(props) {
-    const {content} =props;
+function Comment() {
     return (
-        <div>{content}</div>
+        <div>
+            <h1>Comment</h1>
+        </div>
     );
 }
-export default Post
+export default Comment
