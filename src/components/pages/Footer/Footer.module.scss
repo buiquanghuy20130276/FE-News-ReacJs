@@ -61,14 +61,16 @@
         .size{
           display: flex;
           width: 20%;
-          padding: 18px 35px;
+          padding: 18px 15px;
           ul{
             display:flex;
+            padding: 0;
+            font-weight: 600;
             li{
+                text-align: center;
                 font-size: 12px;
-                width: 87px;
-                padding: 0 18px;
-                font-weight: 600;
+                width: max-content;
+                margin-right: 35px;
                 color:#6c6e70;
                 line-height: 1.4rem;
                 cursor: pointer;
