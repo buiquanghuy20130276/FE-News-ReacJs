@@ -7,6 +7,7 @@ import NongNghiep from "../pages/NewsCategory/NongNghiep/NongNghiep";
 import PhapLuat from "../pages/NewsCategory/PhapLuat/PhapLuat";
 import DetailNews, {loadNewsDetail} from "../pages/DetailNews/DetailNews";
 import Error from "../pages/Error/Error";
+import TrangChu from "../pages/NewsCategory/TrangChu/TrangChu";
 import KinhTe from "../pages/NewsCategory/KinhTe/KinhTe";
 import GiaoDuc from "../pages/NewsCategory/GiaoDuc/GiaoDuc";
 import DoiSong from "../pages/NewsCategory/DoiSong/DoiSong";
@@ -18,6 +19,10 @@ const Router = createBrowserRouter([{
     path: '/',
     element: <App/>,
     children: [
+        {
+            path: 'trang-chu',
+            element: <TrangChu/>,
+        },
         {
             path: 'tin-tuc',
             element: <TinTuc/>,

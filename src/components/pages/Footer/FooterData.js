@@ -1,7 +1,7 @@
 const HeaderData = [
     {
         name: "Trang chủ",
-        path: "/"
+        path: "/trang-chu"
     },
     {
         name: "Tin tức",

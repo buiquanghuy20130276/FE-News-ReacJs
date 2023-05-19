@@ -18,28 +18,27 @@ export default function Footer() {
         </div>
       </div>
       <div className={style["MenuBottom"]}>
-          <div className={style["framBox"]}>
-            <div className={style["footer-part"]}>
-              <div className={style["size"]}>
-                <ul className="list-unstyled mb-0">
-                  {FooterData.map((dataFooter, index) => (
-                    <Link
-                      to={dataFooter.path}
-                      className={
-                        dataFooter.path === active
-                          ? style["item-active"]
-                          : style["item"]
-                      }
-                      onClick={() => {
-                        setActive(dataFooter.path), setType(dataFooter.name);
-                      }}
-                    >
-                      <li key={index}>{dataFooter.name}</li>
-                    </Link>
-                  ))}
-                </ul>
-              </div>
+        <div className={style["framBox"]}>
+          <div className={style["footer-part"]}>
+            <div className={style["size"]}>
+              <ul className="list-unstyled mb-0">
+                {FooterData.map((dataFooter, index) => (
+                  <Link to={dataFooter.path}
+                    className={
+                      dataFooter.path === active
+                        ? style["item-active"]
+                        : style["item"]
+                    }
+                    onClick={() => {
+                      setActive(dataFooter.path);
+                    }}
+                  >
+                    <li key={index}>{dataFooter.name}</li>
+                  </Link>
+                ))}
+              </ul>
             </div>
+          </div>
         </div>
         <div className={style["info"]}>
           <div className={style["info-left"]}>
