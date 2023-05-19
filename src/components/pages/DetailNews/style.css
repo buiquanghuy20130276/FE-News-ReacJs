@@ -722,3 +722,14 @@ i {
 .sidebar {flex: 0.3; display: block; position: sticky; top:100px; right:10px}
 .banner {width: 100%; display: flex;justify-content: center}
 .banner img {width: 300px}
+/*audio*/
+table th, table td {
+    padding: 5px;
+    border-collapse: collapse;
+    border-color: #999;
+    text-align: left;
+    border-width: 1px;
+}
+.entry-body a {
+    color: #3367d6;
+}

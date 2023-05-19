@@ -11,7 +11,7 @@ function useGetDetailNews(url) {
                 const html = response.data;
                 const $ = cheerio.load(html);
 
-                console.log("1. url "+url);
+                // const text = $("div.detail-main div.dt-content div.entry-body")
                 $('div.detail-main div.dt-content div.entry-body div.kbwscwl-relatedbox').remove();
                 const entryBody = $("div.detail-main div.dt-content div.entry-body");
                 const contents = entryBody.contents();
