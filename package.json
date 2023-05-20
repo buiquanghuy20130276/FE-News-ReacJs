@@ -35,7 +35,7 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "start-proxy": "react-scripts start --proxy http://localhost:3000",
+    "start-proxy": "react-scripts start --proxy http://localhost:3000/trang-chu",
     "test": "react-app-rewired test",
     "eject": "react-app-rewired eject"
   },
