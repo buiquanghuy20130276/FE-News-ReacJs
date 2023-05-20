@@ -35,6 +35,7 @@ function TrangChu() {
                 </ul>
             </div>
             <div className={style['box-new']}>
+
             <ul className={style['content-list']}>
                         {filteredFeed.map((post, index) => (
                             <Link style={{ color: "#737373" }} key={index} to={`/detail/${handleString(post.link)}`}>
@@ -48,6 +49,7 @@ function TrangChu() {
                             </Link>
                         ))}
                     </ul>
+
             </div>
         </div>
     )
