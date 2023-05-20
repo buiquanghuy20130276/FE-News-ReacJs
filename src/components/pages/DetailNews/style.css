@@ -1,0 +1,724 @@
+.entry-body, .entry-body p {
+    font-family: NotoSerif, sans-serif
+}
+
+.wrapper {
+    overflow: scroll;
+    height: 500px;
+}
+.wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.wrapmain {
+    display: flex;
+}
+
+.wrapper .main-contain {
+    width: 650px;
+    margin-right: 30px;
+    flex: 0.7;
+}
+
+i {
+    font-style: italic;
+}
+
+.detail-main .title {
+    font-size: 30px;
+    margin-bottom: 10px;
+    font-family: NotoSerif-Bold, sans-serif;
+    display: block;
+    font-weight: 700
+}
+
+.detail-main .line-datetime {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+.detail-main .sapo, p {
+    font-weight: 400;
+    margin-bottom: 15px
+}
+
+.detail-main .line-datetime span {
+    font-size: 15px;
+    color: #6c6e70
+}
+
+.detail-main .line-datetime > span i {
+    margin-bottom: -1px
+}
+
+.btn-sizep span {
+    font-weight: 700;
+    color: #6c6e70;
+    padding: 3px 14px;
+    background: #ebebeb;
+    border-radius: 4px;
+    cursor: pointer
+}
+
+.btn-sizep span:last-child {
+    margin-left: 2px
+}
+
+.detail-main .sapo {
+    font-size: 16px;
+    line-height: 26px;
+    font-family: NotoSerif-Bold, sans-serif;
+    color: #6c6e70
+}
+
+.VCSortableInPreviewMode, .VCSortableInPreviewMode.alignCenter, .widget-box.alignCenter {
+    margin: 0 auto 15px;
+    display: block
+}
+
+.detail-main .dt-content {
+    text-align: justify
+}
+
+.entry-body {
+    word-break: break-word;
+    font-size: 17px;
+    line-height: 29px
+}
+
+.entry-body h2 {
+    font-size: 1.5em
+}
+
+.VCSortableInPreviewMode {
+    position: relative;
+    transition: .3s ease-in-out;
+    width: 100%;
+    z-index: 90;
+    visibility: visible;
+    word-wrap: break-word;
+    cursor: default
+}
+
+.entry-body ol, .entry-body ul {
+    list-style: none
+}
+
+.entry-body a {
+    color: #3367d6
+}
+
+.entry-body img {
+    vertical-align: middle;
+    max-width: 100%
+}
+
+.entry-body h2, .entry-body h3, .entry-body h4, .entry-body h5, .entry-body h6 {
+    font-size: inherit;
+    margin: 10px 0 15px;
+    font-weight: 700
+}
+
+.entry-body .img, .entry-body .title {
+    display: block
+}
+
+.entry-body a {
+    text-decoration: unset;
+    color: inherit
+}
+
+.PhotoCMS_Caption, .PhotoCMS_Caption p {
+    color: #666;
+    font-size: 15px;
+    font-style: italic;
+    margin-top: 0;
+    word-break: break-word;
+    text-align: center
+}
+
+.entry-body .LayoutAlbumCaptionWrapper .CssImageDescription, .entry-body .LayoutAlbumCaptionWrapper p, .entry-body .PhotoCMS_Caption .CssImageDescription, .entry-body .PhotoCMS_Caption p, .entry-body .VideoCMS_Caption .CssImageDescription, .entry-body .VideoCMS_Caption p {
+    font: 400 13px/18px Arial;
+    text-align: center;
+    color: #666 !important;
+    padding: 10px;
+    background-color: #f2f2f2;
+    margin-top: 0
+}
+
+.entry-body .main-sizel .VCSortableInPreviewMode.alignRight, .entry-body .main-sizel .VCSortableInPreviewMode.alignRightOverflow,
+.entry-body .main-sizel .widget-box.alignRight, .entry-body .main-sizel .widget-box.alignRightOverflow {
+    margin-right: 0;
+}
+
+ .VCSortableInPreviewMode.alignRight, .widget-box.alignRight {
+    float: right;
+    margin-right: 0;
+    margin-left: 15px;
+    width: 280px;
+}
+.entry-body p {
+    font-family: Roboto,Helvetica,sans-serif;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+.VCSortableInPreviewMode[type="Photo"] a {
+    outline: none !important;
+}
+.VCSortableInPreviewMode[type=content] p:last-child {
+    margin-bottom: 0;
+}
+.VCSortableInPreviewMode[type="Video"] {
+    text-align: center
+}
+
+.VCSortableInPreviewMode embed {
+    width: 100%
+}
+
+.VCSortableInPreviewMode[type="Photo"] img {
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+    vertical-align: top
+}
+
+.VCSortableInPreviewMode[type="Photo"] a {
+    outline: none !important
+}
+
+.VCSortableInPreviewMode.captionBeside[type="Photo"] {
+    float: none;
+    width: 100% !important;
+    transition: all .5s;
+    position: relative
+}
+
+.VCSortableInPreviewMode.captionBeside[type="Photo"] div:first-child img,.VCSortableInPreviewMode.captionBeside[type="Photo"] div:first-child {
+    float: left;
+    display: inline-block;
+    width: 400px;
+    vertical-align: bottom;
+    transition: all .5s
+}
+
+.VCSortableInPreviewMode.captionBeside[type="Photo"] a {
+    width: 400px
+}
+
+.VCSortableInPreviewMode.captionBeside[type="Photo"] .PhotoCMS_Caption {
+    position: absolute;
+    bottom: 50px;
+    right: 0;
+    display: inline-block !important;
+    width: 240px;
+    vertical-align: bottom;
+    transition: all .5s;
+    background: none;
+    text-align: left
+}
+
+.VCSortableInPreviewMode[type="Photo"].captionBeside.alignLeft div:first-child,.VCSortableInPreviewMode[type="Photo"].captionBeside.alignLeftOverflow div:first-child {
+    float: left;
+    margin-right: 20px;
+    transition: all .5s
+}
+
+.VCSortableInPreviewMode[type="Photo"].captionBeside.alignLeft .PhotoCMS_Caption p,.VCSortableInPreviewMode[type="Photo"].captionBeside.alignLeftOverflow .PhotoCMS_Caption p {
+    text-align: left !important;
+    transition: all .5s
+}
+
+.VCSortableInPreviewMode[type="Photo"].captionBeside.alignLeft .PhotoCMS_Caption,.VCSortableInPreviewMode[type="Photo"].captionBeside.alignLeftOverflow .PhotoCMS_Caption {
+    right: 0;
+    transition: all .5s
+}
+
+.VCSortableInPreviewMode[type="Photo"].captionBeside.alignRight div:first-child,.VCSortableInPreviewMode[type="Photo"].captionBeside.alignRightOverflow div:first-child {
+    float: right;
+    margin-left: 20px;
+    transition: all .5s
+}
+
+.VCSortableInPreviewMode[type="Photo"].captionBeside.alignRight .PhotoCMS_Caption p,.VCSortableInPreviewMode[type="Photo"].captionBeside.alignRightOverflow .PhotoCMS_Caption p {
+    text-align: right !important;
+    transition: all .5s
+}
+
+.VCSortableInPreviewMode[type="Photo"].captionBeside.alignRight .PhotoCMS_Caption,.VCSortableInPreviewMode[type="Photo"].captionBeside.alignRightOverflow .PhotoCMS_Caption {
+    left: 0;
+    transition: all .5s
+}
+
+.VCSortableInPreviewMode[type="Photo"].captionBeside .PhotoCMS_Caption p {
+    margin: 0 !important
+}
+
+.VCSortableInPreviewMode[type="Photo"] .fb-share-wrapper {
+    font: normal 13px/25px Arial;
+    color: #bebebe;
+    text-align: left
+}
+
+.VCSortableInPreviewMode[type="Photo"].captionBeside .fb-share-wrapper {
+    bottom: 20px;
+    position: absolute;
+    width: 240px
+}
+
+.VCSortableInPreviewMode[type="Photo"].captionBeside.alignLeft .fb-share-wrapper,.VCSortableInPreviewMode[type="Photo"].captionBeside.alignLeftOverflow .fb-share-wrapper {
+    right: 0;
+    text-align: left
+}
+
+.VCSortableInPreviewMode[type="Photo"].captionBeside.alignRight .fb-share-wrapper,.VCSortableInPreviewMode[type="Photo"].captionBeside.alignRightOverflow .fb-share-wrapper {
+    left: 0;
+    text-align: right
+}
+
+.VCSortableInPreviewMode[type="Photo"] .fb-share-wrapper .fb-icon {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: url(https://static.mediacdn.vn/webthethao/web_images/fb-share.png);
+    margin-right: 5px
+}
+
+.VCSortableInPreviewMode[type="Photo"] .fb-share-wrapper .fb-icon {
+    background: rgba(0,0,0,0) url("https://static.mediacdn.vn/webthethao/web_images/fb-share.png") no-repeat scroll 0 0;
+    display: inline-block;
+    height: 15px;
+    margin-bottom: -3px;
+    width: 15px
+}
+
+.VCSortableInPreviewMode[type="Photo"].alignCenterOverflow .fb-share-wrapper {
+    width: 660px;
+    margin: auto;
+    text-align: left
+}
+
+.VCSortableInPreviewMode[type="RelatedOneNews"] {
+    background: #f7f7f7 none repeat scroll 0 0;
+    border: 1px solid #ddd;
+    display: inline-block;
+    margin: 10px 0;
+    width: 100%
+}
+
+.VCSortableInPreviewMode[type="RelatedOneNews"] img {
+    outline: medium none
+}
+
+.VCSortableInPreviewMode[type="RelatedOneNews"] a.OneNewsTitle {
+    color: #004276;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 7px
+}
+
+.VCSortableInPreviewMode[type="RelatedOneNews"] .VCObjectBoxRelatedNewsItemSapo {
+    color: #777
+}
+
+.VCSortableInPreviewMode[type="RelatedOneNews"] img {
+    outline: medium none
+}
+
+.VCSortableInPreviewMode[type="RelatedOneNews"] a.OneNewsTitle {
+    color: #004276;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 7px 0
+}
+
+.VCSortableInPreviewMode[type="RelatedOneNews"] .VCObjectBoxRelatedNewsItemSapo {
+    color: #777;
+    display: block;
+    font-size: 12px;
+    margin: 0 10px 0 0
+}
+
+.VCSortableInPreviewMode[type="RelatedNews"] {
+    box-sizing: border-box;
+    font-family: Arial;
+    text-align: center
+}
+
+.VCSortableInPreviewMode[type="RelatedNews"] * {
+    box-sizing: border-box
+}
+
+.VCSortableInPreviewMode[type="RelatedNews"] td {
+    margin: 0;
+    padding: 5px;
+    width: 32% !important
+}
+
+.VCSortableInPreviewMode[type="RelatedNews"] img {
+    max-width: 100% !important;
+    width: 100% !important
+}
+
+.VCSortableInPreviewMode[type="content"] {
+    border: 1px solid #999;
+    padding: 10px
+}
+
+.VCSortableInPreviewMode[type="content"] p {
+    margin-bottom: 7px
+}
+
+.VCSortableInPreviewMode[type="FirstCharacter"] {
+    color: #fff;
+    display: inline;
+    float: left;
+    font-size: 60px;
+    height: 70px;
+    margin: 10px 10px 0 0;
+    padding-top: 15px;
+    width: 80px
+}
+
+.VCSortableInPreviewMode[type='contentnumber'] {
+    width: 100%;
+    height: 68px;
+    text-align: left
+}
+
+.VCSortableInPreviewMode[type='contentnumber'] img {
+    vertical-align: top
+}
+
+.VCSortableInPreviewMode[type='contentnumber'].onLeft {
+    text-align: left
+}
+
+.VCSortableInPreviewMode[type='contentnumber'].onRight {
+    text-align: right
+}
+
+.VCSortableInPreviewMode[type='contentnumber'].onCenter {
+    text-align: center
+}
+
+.VCSortableInPreviewMode[type=content] {
+    min-height: 38px;
+    text-align: left
+}
+
+.VCSortableInPreviewMode[type=content] p {
+    margin-bottom: 10px
+}
+
+.VCSortableInPreviewMode[type=content] p:last-child {
+    margin-bottom: 0
+}
+
+.VCSortableInPreviewMode[type=content] p:last-child {
+    margin-bottom: 0
+}
+
+.VCSortableInPreviewMode[type="content"] div[contenteditable="true"]::after {
+    clear: both;
+    content: "";
+    display: block;
+    color: #999
+}
+
+.VCSortableInPreviewMode[type="hr"] {
+    margin: 15px 0;
+    height: 1px
+}
+
+.VCSortableInPreviewMode[type="FirstCharacterv2"] img {
+    width: 100%
+}
+
+.VCSortableInPreviewMode[type="FirstCharacterv2"].alignLeft {
+    margin-right: 15px !important
+}
+
+.VCSortableInPreviewMode[type="FirstCharacterv2"].alignRight {
+    margin-left: 15px !important
+}
+
+.VCSortableInPreviewMode[type="Vote"]>div h3 {
+    height: 30px;
+    line-height: 30px;
+    text-indent: 10px;
+    background: #fff;
+    margin: 0;
+    width: 100%;
+    -moz-user-select: none;
+    text-align: left;
+    color: #af1903;
+    font-size: 18px;
+    font-family: arial
+}
+
+.VCSortableInPreviewMode[type="Vote"]>div h4 {
+    padding: 5px 10px;
+    text-align: left
+}
+
+.VCSortableInPreviewMode[type="Vote"]>div h4 a {
+    color: #333;
+    text-align: left;
+    text-decoration: none;
+    font-family: arial
+}
+
+.VCSortableInPreviewMode[type="Vote"]>div p {
+    font-family: Arial;
+    font-size: 12px;
+    color: #999;
+    margin: 0;
+    padding: 5px 10px;
+    text-align: left
+}
+
+.VCSortableInPreviewMode[type="Vote"]>div span {
+    user-select: none !important;
+    -moz-user-select: none !important;
+    -webkit-user-select: none !important;
+    -ms-user-select: none !important
+}
+
+.VCSortableInPreviewMode[type="Vote"]>div label {
+    font-family: Arial;
+    font-size: 12px;
+    color: #555;
+    user-select: none !important;
+    -moz-user-select: none !important;
+    -webkit-user-select: none !important;
+    -ms-user-select: none !important
+}
+
+.VCSortableInPreviewMode[type="Vote"]>div img {
+    outline: none
+}
+
+.VCSortableInPreviewMode[type="Vote"]>div .VCListVoteAnswers {
+    text-align: left
+}
+
+.VCSortableInPreviewMode[type="Vote"]>div .VCPollFooter {
+    text-align: center;
+    margin: 0;
+    padding: 10px 0;
+    border-top: thin solid #ebebeb
+}
+
+.VCSortableInPreviewMode[type=Vote] .VoteObjectBoxWrapper {
+    padding: 10px 0;
+    border: thin solid #ebebeb;
+    border-radius: 5px
+}
+
+.PhotoCMS_Caption,.PhotoCMS_Caption p {
+    color: #666;
+    font-size: 15px;
+    font-style: italic;
+    margin-top: 0;
+    word-break: break-word;
+    text-align: center;
+    margin-top: 5px
+}
+
+.VCSortableInPreviewMode[type="StarQuoteV2"] .quote {
+    border: 8px none #ff6a03;
+    font-weight: bold;
+    padding: 20px 0;
+    text-align: left;
+    font-size: 30px !important;
+    line-height: 36px !important
+}
+
+.VCSortableInPreviewMode[type="StarQuoteV2"].alignCenter {
+    clear: both
+}
+
+.VCSortableInPreviewMode[type="StarQuoteV2"] span.custom-border {
+    border-color: #ff6c13;
+    border-style: solid none;
+    border-width: 8px;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-style: none
+}
+
+.VCSortableInPreviewMode[type="StarQuoteV2"] span.custom-border.border-sort {
+    left: 45%;
+    right: 45%
+}
+
+.VCSortableInPreviewMode[type="StarQuoteV2"] span.custom-border.border-top {
+    border-top-style: solid
+}
+
+.VCSortableInPreviewMode[type="StarQuoteV2"] span.custom-border.border-top>.quote {
+    margin-bottom: 0
+}
+
+.VCSortableInPreviewMode[type="StarQuoteV2"] span.custom-border.border-bottom {
+    border-bottom-style: solid
+}
+
+.VCSortableInPreviewMode[type="StarQuoteV2"] .name-n-quote {
+    position: relative
+}
+
+.VCSortableInPreviewMode[type="StarQuoteV2"] .quote.border-left {
+    border-left-style: solid;
+    padding-left: 20px
+}
+
+.VCSortableInPreviewMode[type="StarQuoteV2"] .quote.border-right,.VCSortableInPreviewMode[type="StarQuoteV2"] .quote.border-left {
+    border-width: 4px
+}
+
+.VCSortableInPreviewMode[type="StarQuoteV2"] .StarNameCaption {
+    color: #797979;
+    font: 14px/20px Arial;
+    margin-top: 10px;
+    text-align: left
+}
+
+.VCSortableInPreviewMode[type="StarQuoteV2"] .StarNameCaption.hasmargin {
+    margin-left: 27px
+}
+
+.VCSortableInPreviewMode[type="StarQuoteV2"].alignCenterOverflow .StarNameCaption {
+    width: 660px;
+    margin: auto
+}
+
+.VCSortableInPreviewMode[type="StarQuoteV2"].alignLeftOverflow,.VCSortableInPreviewMode[type="StarQuoteV2"].alignLeft,.VCSortableInPreviewMode[type="StarQuoteV2"].alignRight,.VCSortableInPreviewMode[type="StarQuoteV2"].alignRightOverflow {
+    margin-top: 10px
+}
+
+.VCSortableInPreviewMode[type="SimpleQuote"].alignCenter {
+    clear: both
+}
+
+.VCSortableInPreviewMode[type="SimpleQuote"] .name-n-quote {
+    position: relative;
+    margin-left: 20px;
+    margin-top: 10px
+}
+
+.VCSortableInPreviewMode[type="SimpleQuote"] .name-n-quote>p {
+    padding: 10px 0
+}
+
+.VCSortableInPreviewMode[type="SimpleQuote"] span.custom-border {
+    border-color: #ff6c13;
+    border-style: solid none;
+    border-width: 4px;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-style: none
+}
+
+.VCSortableInPreviewMode[type="SimpleQuote"] .quote.border-right,.VCSortableInPreviewMode[type="SimpleQuote"] .quote.border-left {
+    border-width: 4px
+}
+
+.VCSortableInPreviewMode[type="SimpleQuote"] span.custom-border.border-sort {
+    left: 45%;
+    right: 45%
+}
+
+.VCSortableInPreviewMode[type="SimpleQuote"] span.custom-border.border-top {
+    border-top-style: solid
+}
+
+.VCSortableInPreviewMode[type="SimpleQuote"] span.custom-border.border-top>.quote {
+    margin-bottom: 0
+}
+
+.VCSortableInPreviewMode[type="SimpleQuote"] span.custom-border.border-bottom {
+    border-bottom-style: solid
+}
+
+.VCSortableInPreviewMode[type="SimpleQuote"] .quote.border-left {
+    border-left-style: solid;
+    padding-left: 20px
+}
+
+.VCSortableInPreviewMode[type="SimpleQuote"] .quote.border-right {
+    border-right-style: solid;
+    padding-right: 20px
+}
+
+.VCSortableInPreviewMode[type="SimpleQuote"] .StarNameCaption.hasmargin {
+    margin-left: 27px
+}
+
+.VCSortableInPreviewMode[type="SimpleQuote"].alignCenterOverflow .StarNameCaption {
+    width: 660px;
+    margin: auto
+}
+
+.VCSortableInPreviewMode[type="SimpleQuote"].alignLeftOverflow,.VCSortableInPreviewMode[type="SimpleQuote"].alignLeft,.VCSortableInPreviewMode[type="SimpleQuote"].alignRight,.VCSortableInPreviewMode[type="SimpleQuote"].alignRightOverflow {
+    margin-top: 10px
+}
+
+.VCSortableInPreviewMode[type="SimpleQuote"].no-border .quote {
+    position: relative
+}
+
+.VCSortableInPreviewMode[type="SimpleQuote"].no-border .quote:before {
+    content: "â€œ";
+    font-size: 60px;
+    position: absolute;
+    font-family: Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    background: none;
+    line-height: 29px;
+    left: -20px;
+    top: 5px
+}
+
+.VCSortableInPreviewMode[type="SimpleQuote"] .StarNameCaption {
+    text-align: right;
+    font-size: 12px;
+    padding: 0;
+    font-style: italic;
+    font-weight: 700;
+    color: #707070;
+    color: inherit;
+    text-decoration: none
+}
+
+.VCSortableInPreviewMode[type="SimpleQuote"] .StarNameCaption:before {
+    content: '';
+    height: 1px;
+    background-color: #ed1b2f;
+    width: 32px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px
+}
+
+.VCSortableInPreviewMode[type="SimpleQuote"] .StarNameCaption:after {
+    content: '';
+    height: 1px;
+    background-color: #ed1b2f;
+    width: 32px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 8px
+}
+.sidebar {flex: 0.3; display: block; position: sticky; top:100px; right:10px}
+.banner {width: 100%; display: flex;justify-content: center}
+.banner img {width: 300px}
