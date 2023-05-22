@@ -42,7 +42,6 @@ function DetailNews() {
                                         </div>
                                         <div className="sapo">{data.sapo}</div>
                                         <Content content={data.content}/>
-                                        {/*<RelatedNewsBox relateNews = {data.relatedNews}/>*/}
                                     </>
                                 ) : (<p>Loading...</p>)
                             }

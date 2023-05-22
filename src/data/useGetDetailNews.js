@@ -23,15 +23,12 @@ function useGetDetailNews(url) {
                 const sapo = $("div.detail-main div.sapo").length>0 ? $("div.detail-main div.sapo").text() : "";
                 const author = $("div.detail-main div.line-datetime span.anots").text();
                 const dateTime = $("div.detail-main div.line-datetime span:nth-child(2)").text();
-                // const relateNewsBox = $("div.detail-main div.dt-content div.box-samecat ul.samecat-news").html();
-                // const relatedNewsBoxNode = document.createRange().createContextualFragment(relateNewsBox);
                 const result = {
                     title:title,
                     sapo:sapo,
                     content: entryBodyFragment,
                     author: author,
                     dateTime:dateTime,
-                    // relatedNews:relatedNewsBoxNode,
                 };
                 setNewsDetail(result);
             })
