@@ -1,33 +1,25 @@
-import React, {Component} from 'react';
 import axios from 'axios';
+import {useState} from "react";
 
-function TextToSpeech(props) {
-    axios.post('https://viettelgroup.ai/voice/api/tts/v1/rest/syn', {
-        "text": props.text,
-        "voice": "trinhthiviettrinh",
-        "id": "2",
-        "without_filter": false,
-        "speed": 1.0,
-        "tts_return_option": 2
-    }, {
-        headers: {
-            'Content-Type': 'application/json',
-            'token': 'n-73-U7wDiEDEyt6WyqAwZ-RQSSUfz3tr7ba9xi475XtPhbORvBenYIqGr5qcc6o'
-        }
-    }).then(response => {
-            console.log('response status: '+response.status);
-            let audio = response.data;
-            let audioElement = new Audio("data:audio/wav;base64," + audio);
-            audioElement.setAttribute('controls','');
-            console.log('audioElement: '+audioElement);
-            document.getElementById('audio-container').appendChild(audioElement);
-        }).catch(error => console.log(error));
+function Audio(props) {
+    const [audioSrc, setAudioSrc] = useState(null);
+    const handleButtonClick = () => {
+        const baseUrl = 'https://api.zalo.ai/v1/tts/synthesize';
+        const headers = {'apikey': 'znb5Mdaj1otUUWu3jbZGUUkSGA6zY1yv'};
+        const data = {'input': props.text};
+        axios.post(baseUrl, data, {headers})
+            .then(response => {
+                console.log('data: '+response.status);
+                const audioSrc = URL.createObjectURL(new Blob([response.data]));
+                setAudioSrc(audioSrc);
+            });
+    };
 
     return (
-        <>
-            <div id='audio-container'></div>
-        </>
+        <div>
+            <button onClick={handleButtonClick}>Listen</button>
+            {audioSrc && <audio src={audioSrc} controls />}
+        </div>
     );
 }
-
-export default TextToSpeech;
+export default Audio;
