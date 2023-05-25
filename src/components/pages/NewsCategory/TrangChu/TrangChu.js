@@ -31,7 +31,7 @@ function TrangChu() {
     dots: false,
     infiniti: true,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: 4,
     slidesToScroll: 1,
   };
   return (
@@ -50,6 +50,12 @@ function TrangChu() {
             </div>
             <div className={style['img-customize']}>
               <h3>4</h3>
+            </div>
+            <div className={style['img-customize']}>
+              <h3>5</h3>
+            </div>
+            <div className={style['img-customize']}>
+              <h3>6</h3>
             </div>
           </Slider>
         </div>
