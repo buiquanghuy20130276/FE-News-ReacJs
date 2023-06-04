@@ -1,6 +1,12 @@
 .wrapper {
   color: rgba(0, 0, 0, .55);
   border-radius: 5px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, .07), 0 2px 4px rgba(0, 0, 0, .05);
+  background-color: white;
+
   .logo {
     display: flex;
     justify-content: space-between;
@@ -23,7 +29,7 @@
         border-radius: 5px;
         border: solid 2px #e5e5e5;
         padding: 5px;
-        color: #e5e5e5;
+        color: black;
       }
 
       .btn-search {
@@ -46,7 +52,10 @@
 
     a {
       color: rgba(0, 0, 0, .55);
-      li {font-size: 15px}
+
+      li {
+        font-size: 15px
+      }
     }
 
     .item {
@@ -57,6 +66,7 @@
         background-color: #f0f0f0;
         color: #008837;
         border-radius: 5px;
+
         a {
           color: #008837;
         }

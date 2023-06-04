@@ -42,6 +42,21 @@ function TrangChu() {
             <div className={style['img-customize']}>
               <h3>1</h3>
             </div>
+            <div className={style['box-new']}>
+                <ul className={style['content-list']}>
+                    {filteredFeed.map((post, index) => (
+                        <Link style={{ color: "#737373" }} key={index} to={`/detail/${handleString(post.link)}`}>
+                            <li className={style['content-item']}>
+                                <img className={style['img-content-item']} src={post.imageUrl} alt={post.title} />
+                                <div className={style['block-content-item']}>
+                                    <h3 className={style['content-item-title']}>{post.title}</h3>
+                                    <p>{post.description}</p>
+                                    <p className={style['pubdate']}>{post.pubDate}</p>
+                                </div>
+                            </li>
+                        </Link>
+                    ))}
+                </ul>
             <div className={style['img-customize']}>
               <h3>2</h3>
             </div>

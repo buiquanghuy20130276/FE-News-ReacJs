@@ -18,8 +18,14 @@
   margin-left: 10px;
   overflow: scroll;
   max-height: 600px;
-  li{
+
+  li {
     cursor: pointer;
+  }
+
+  li:hover {
+    background-color: #f0f0f0;
+    color: #3367d6;
   }
 }
 
@@ -122,13 +128,16 @@
 
     }
   }
-  h3{
+
+  h3 {
     font-size: 25px;
   }
-  p{
+
+  p {
     font-size: 15px;
   }
-  .pub-date{
+
+  .pub-date {
     display: flex;
     font-size: 12px;
     justify-content: flex-end;
