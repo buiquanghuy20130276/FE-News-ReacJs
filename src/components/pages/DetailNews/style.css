@@ -6,6 +6,7 @@
     overflow: scroll;
     height: 500px;
 }
+
 .wrapper::-webkit-scrollbar {
     display: none;
 }
@@ -153,23 +154,27 @@ i {
     margin-right: 0;
 }
 
- .VCSortableInPreviewMode.alignRight, .widget-box.alignRight {
+.VCSortableInPreviewMode.alignRight, .widget-box.alignRight {
     float: right;
     margin-right: 0;
     margin-left: 15px;
     width: 280px;
 }
+
 .entry-body p {
-    font-family: Roboto,Helvetica,sans-serif;
+    font-family: Roboto, Helvetica, sans-serif;
     font-weight: 400;
     margin-bottom: 15px;
 }
+
 .VCSortableInPreviewMode[type="Photo"] a {
     outline: none !important;
 }
+
 .VCSortableInPreviewMode[type=content] p:last-child {
     margin-bottom: 0;
 }
+
 .VCSortableInPreviewMode[type="Video"] {
     text-align: center
 }
@@ -196,7 +201,7 @@ i {
     position: relative
 }
 
-.VCSortableInPreviewMode.captionBeside[type="Photo"] div:first-child img,.VCSortableInPreviewMode.captionBeside[type="Photo"] div:first-child {
+.VCSortableInPreviewMode.captionBeside[type="Photo"] div:first-child img, .VCSortableInPreviewMode.captionBeside[type="Photo"] div:first-child {
     float: left;
     display: inline-block;
     width: 400px;
@@ -220,34 +225,34 @@ i {
     text-align: left
 }
 
-.VCSortableInPreviewMode[type="Photo"].captionBeside.alignLeft div:first-child,.VCSortableInPreviewMode[type="Photo"].captionBeside.alignLeftOverflow div:first-child {
+.VCSortableInPreviewMode[type="Photo"].captionBeside.alignLeft div:first-child, .VCSortableInPreviewMode[type="Photo"].captionBeside.alignLeftOverflow div:first-child {
     float: left;
     margin-right: 20px;
     transition: all .5s
 }
 
-.VCSortableInPreviewMode[type="Photo"].captionBeside.alignLeft .PhotoCMS_Caption p,.VCSortableInPreviewMode[type="Photo"].captionBeside.alignLeftOverflow .PhotoCMS_Caption p {
+.VCSortableInPreviewMode[type="Photo"].captionBeside.alignLeft .PhotoCMS_Caption p, .VCSortableInPreviewMode[type="Photo"].captionBeside.alignLeftOverflow .PhotoCMS_Caption p {
     text-align: left !important;
     transition: all .5s
 }
 
-.VCSortableInPreviewMode[type="Photo"].captionBeside.alignLeft .PhotoCMS_Caption,.VCSortableInPreviewMode[type="Photo"].captionBeside.alignLeftOverflow .PhotoCMS_Caption {
+.VCSortableInPreviewMode[type="Photo"].captionBeside.alignLeft .PhotoCMS_Caption, .VCSortableInPreviewMode[type="Photo"].captionBeside.alignLeftOverflow .PhotoCMS_Caption {
     right: 0;
     transition: all .5s
 }
 
-.VCSortableInPreviewMode[type="Photo"].captionBeside.alignRight div:first-child,.VCSortableInPreviewMode[type="Photo"].captionBeside.alignRightOverflow div:first-child {
+.VCSortableInPreviewMode[type="Photo"].captionBeside.alignRight div:first-child, .VCSortableInPreviewMode[type="Photo"].captionBeside.alignRightOverflow div:first-child {
     float: right;
     margin-left: 20px;
     transition: all .5s
 }
 
-.VCSortableInPreviewMode[type="Photo"].captionBeside.alignRight .PhotoCMS_Caption p,.VCSortableInPreviewMode[type="Photo"].captionBeside.alignRightOverflow .PhotoCMS_Caption p {
+.VCSortableInPreviewMode[type="Photo"].captionBeside.alignRight .PhotoCMS_Caption p, .VCSortableInPreviewMode[type="Photo"].captionBeside.alignRightOverflow .PhotoCMS_Caption p {
     text-align: right !important;
     transition: all .5s
 }
 
-.VCSortableInPreviewMode[type="Photo"].captionBeside.alignRight .PhotoCMS_Caption,.VCSortableInPreviewMode[type="Photo"].captionBeside.alignRightOverflow .PhotoCMS_Caption {
+.VCSortableInPreviewMode[type="Photo"].captionBeside.alignRight .PhotoCMS_Caption, .VCSortableInPreviewMode[type="Photo"].captionBeside.alignRightOverflow .PhotoCMS_Caption {
     left: 0;
     transition: all .5s
 }
@@ -268,12 +273,12 @@ i {
     width: 240px
 }
 
-.VCSortableInPreviewMode[type="Photo"].captionBeside.alignLeft .fb-share-wrapper,.VCSortableInPreviewMode[type="Photo"].captionBeside.alignLeftOverflow .fb-share-wrapper {
+.VCSortableInPreviewMode[type="Photo"].captionBeside.alignLeft .fb-share-wrapper, .VCSortableInPreviewMode[type="Photo"].captionBeside.alignLeftOverflow .fb-share-wrapper {
     right: 0;
     text-align: left
 }
 
-.VCSortableInPreviewMode[type="Photo"].captionBeside.alignRight .fb-share-wrapper,.VCSortableInPreviewMode[type="Photo"].captionBeside.alignRightOverflow .fb-share-wrapper {
+.VCSortableInPreviewMode[type="Photo"].captionBeside.alignRight .fb-share-wrapper, .VCSortableInPreviewMode[type="Photo"].captionBeside.alignRightOverflow .fb-share-wrapper {
     left: 0;
     text-align: right
 }
@@ -287,7 +292,7 @@ i {
 }
 
 .VCSortableInPreviewMode[type="Photo"] .fb-share-wrapper .fb-icon {
-    background: rgba(0,0,0,0) url("https://static.mediacdn.vn/webthethao/web_images/fb-share.png") no-repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) url("https://static.mediacdn.vn/webthethao/web_images/fb-share.png") no-repeat scroll 0 0;
     display: inline-block;
     height: 15px;
     margin-bottom: -3px;
@@ -445,7 +450,7 @@ i {
     margin-left: 15px !important
 }
 
-.VCSortableInPreviewMode[type="Vote"]>div h3 {
+.VCSortableInPreviewMode[type="Vote"] > div h3 {
     height: 30px;
     line-height: 30px;
     text-indent: 10px;
@@ -459,19 +464,19 @@ i {
     font-family: arial
 }
 
-.VCSortableInPreviewMode[type="Vote"]>div h4 {
+.VCSortableInPreviewMode[type="Vote"] > div h4 {
     padding: 5px 10px;
     text-align: left
 }
 
-.VCSortableInPreviewMode[type="Vote"]>div h4 a {
+.VCSortableInPreviewMode[type="Vote"] > div h4 a {
     color: #333;
     text-align: left;
     text-decoration: none;
     font-family: arial
 }
 
-.VCSortableInPreviewMode[type="Vote"]>div p {
+.VCSortableInPreviewMode[type="Vote"] > div p {
     font-family: Arial;
     font-size: 12px;
     color: #999;
@@ -480,14 +485,14 @@ i {
     text-align: left
 }
 
-.VCSortableInPreviewMode[type="Vote"]>div span {
+.VCSortableInPreviewMode[type="Vote"] > div span {
     user-select: none !important;
     -moz-user-select: none !important;
     -webkit-user-select: none !important;
     -ms-user-select: none !important
 }
 
-.VCSortableInPreviewMode[type="Vote"]>div label {
+.VCSortableInPreviewMode[type="Vote"] > div label {
     font-family: Arial;
     font-size: 12px;
     color: #555;
@@ -497,15 +502,15 @@ i {
     -ms-user-select: none !important
 }
 
-.VCSortableInPreviewMode[type="Vote"]>div img {
+.VCSortableInPreviewMode[type="Vote"] > div img {
     outline: none
 }
 
-.VCSortableInPreviewMode[type="Vote"]>div .VCListVoteAnswers {
+.VCSortableInPreviewMode[type="Vote"] > div .VCListVoteAnswers {
     text-align: left
 }
 
-.VCSortableInPreviewMode[type="Vote"]>div .VCPollFooter {
+.VCSortableInPreviewMode[type="Vote"] > div .VCPollFooter {
     text-align: center;
     margin: 0;
     padding: 10px 0;
@@ -518,7 +523,7 @@ i {
     border-radius: 5px
 }
 
-.PhotoCMS_Caption,.PhotoCMS_Caption p {
+.PhotoCMS_Caption, .PhotoCMS_Caption p {
     color: #666;
     font-size: 15px;
     font-style: italic;
@@ -562,7 +567,7 @@ i {
     border-top-style: solid
 }
 
-.VCSortableInPreviewMode[type="StarQuoteV2"] span.custom-border.border-top>.quote {
+.VCSortableInPreviewMode[type="StarQuoteV2"] span.custom-border.border-top > .quote {
     margin-bottom: 0
 }
 
@@ -579,7 +584,7 @@ i {
     padding-left: 20px
 }
 
-.VCSortableInPreviewMode[type="StarQuoteV2"] .quote.border-right,.VCSortableInPreviewMode[type="StarQuoteV2"] .quote.border-left {
+.VCSortableInPreviewMode[type="StarQuoteV2"] .quote.border-right, .VCSortableInPreviewMode[type="StarQuoteV2"] .quote.border-left {
     border-width: 4px
 }
 
@@ -599,7 +604,7 @@ i {
     margin: auto
 }
 
-.VCSortableInPreviewMode[type="StarQuoteV2"].alignLeftOverflow,.VCSortableInPreviewMode[type="StarQuoteV2"].alignLeft,.VCSortableInPreviewMode[type="StarQuoteV2"].alignRight,.VCSortableInPreviewMode[type="StarQuoteV2"].alignRightOverflow {
+.VCSortableInPreviewMode[type="StarQuoteV2"].alignLeftOverflow, .VCSortableInPreviewMode[type="StarQuoteV2"].alignLeft, .VCSortableInPreviewMode[type="StarQuoteV2"].alignRight, .VCSortableInPreviewMode[type="StarQuoteV2"].alignRightOverflow {
     margin-top: 10px
 }
 
@@ -613,7 +618,7 @@ i {
     margin-top: 10px
 }
 
-.VCSortableInPreviewMode[type="SimpleQuote"] .name-n-quote>p {
+.VCSortableInPreviewMode[type="SimpleQuote"] .name-n-quote > p {
     padding: 10px 0
 }
 
@@ -629,7 +634,7 @@ i {
     border-style: none
 }
 
-.VCSortableInPreviewMode[type="SimpleQuote"] .quote.border-right,.VCSortableInPreviewMode[type="SimpleQuote"] .quote.border-left {
+.VCSortableInPreviewMode[type="SimpleQuote"] .quote.border-right, .VCSortableInPreviewMode[type="SimpleQuote"] .quote.border-left {
     border-width: 4px
 }
 
@@ -642,7 +647,7 @@ i {
     border-top-style: solid
 }
 
-.VCSortableInPreviewMode[type="SimpleQuote"] span.custom-border.border-top>.quote {
+.VCSortableInPreviewMode[type="SimpleQuote"] span.custom-border.border-top > .quote {
     margin-bottom: 0
 }
 
@@ -669,7 +674,7 @@ i {
     margin: auto
 }
 
-.VCSortableInPreviewMode[type="SimpleQuote"].alignLeftOverflow,.VCSortableInPreviewMode[type="SimpleQuote"].alignLeft,.VCSortableInPreviewMode[type="SimpleQuote"].alignRight,.VCSortableInPreviewMode[type="SimpleQuote"].alignRightOverflow {
+.VCSortableInPreviewMode[type="SimpleQuote"].alignLeftOverflow, .VCSortableInPreviewMode[type="SimpleQuote"].alignLeft, .VCSortableInPreviewMode[type="SimpleQuote"].alignRight, .VCSortableInPreviewMode[type="SimpleQuote"].alignRightOverflow {
     margin-top: 10px
 }
 
@@ -681,7 +686,7 @@ i {
     content: "â€œ";
     font-size: 60px;
     position: absolute;
-    font-family: Helvetica,Arial,sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
     font-weight: 400;
     background: none;
     line-height: 29px;
@@ -717,8 +722,21 @@ i {
     width: 32px;
     display: inline-block;
     vertical-align: middle;
-    margin-left: 8px
+    margin-left: 8px;
 }
-.sidebar {flex: 0.3; display: block; position: sticky; top:100px; right:10px}
-.banner {width: 100%; display: flex;justify-content: center}
-.banner img {width: 300px}
+
+.sidebar {
+    flex: 0.3;
+    top: 100px;
+    right: 10px;
+}
+
+.banner {
+    width: 100%;
+    display: flex;
+    justify-content: center
+}
+
+.banner img {
+    width: 300px
+}
