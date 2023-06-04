@@ -1,18 +1,18 @@
 const DataSideBar = [
     {
-        path: "/trang-chu",
+        path: "/",
         title: 'Chuyện của sao',
         type: 'chuyen-cua-sao-1105'
     },
     {
-        path: "/trang-chu",
+        path: "/",
         title: 'Kính đa tròng',
         type: 'kinh-da-trong-1059'
     },
     {
         title: 'Nông sản độc lạ',
         type: 'nong-san-doc-la-the-gioi-1149',
-        path: "/trang-chu"
+        path: "/"
     },
     {
         path: "/trang-chu",
