@@ -2,24 +2,39 @@ import axios from 'axios';
 import {useState} from "react";
 
 function Audio(props) {
-    const [audioSrc, setAudioSrc] = useState(null);
-    const handleButtonClick = () => {
-        const baseUrl = 'https://api.zalo.ai/v1/tts/synthesize';
-        const headers = {'apikey': 'znb5Mdaj1otUUWu3jbZGUUkSGA6zY1yv'};
-        const data = {'input': props.text};
-        axios.post(baseUrl, data, {headers})
-            .then(response => {
-                console.log('data: '+response.status);
-                const audioSrc = URL.createObjectURL(new Blob([response.data]));
-                setAudioSrc(audioSrc);
-            });
+    const [audioUrl, setAudioUrl] = useState(null);
+    const handleButtonClick = async () => {
+        const data = {
+            "text": props.text,
+            "voice": "hn-quynhanh",
+            "id": "2",
+            "without_filter": false,
+            "speed": 1.0,
+            "tts_return_option": 2
+        };
+        const res = await fetch('https://viettelgroup.ai/voice/api/tts/v1/rest/syn', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'token': '8XCd2qQwIkUuUKJg3eeGOtnyXfdpvhX90ea5DDwkapJkRVPB-Bd6Kw0du-2ivzew'
+            },
+            body: JSON.stringify(data)
+        });
+
+        if (!res.ok) {
+            throw new Error('Fetch failed!');
+        }
+
+        const wavFile = await res.blob();
+        document.getElementById('audio').src = URL.createObjectURL(wavFile);
     };
 
     return (
         <div>
             <button onClick={handleButtonClick}>Listen</button>
-            {audioSrc && <audio src={audioSrc} controls />}
+            <audio controls id='audio'></audio>
         </div>
+
     );
 }
 export default Audio;

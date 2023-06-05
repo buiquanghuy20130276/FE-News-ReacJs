@@ -11,16 +11,16 @@ function useGetDetailNews(url) {
                 const html = response.data;
                 const $ = cheerio.load(html);
 
-                // const text = $("div.detail-main div.dt-content div.entry-body")
                 $('div.detail-main div.dt-content div.entry-body div.kbwscwl-relatedbox').remove();
+
                 const entryBody = $("div.detail-main div.dt-content div.entry-body");
                 const contents = entryBody.contents();
                 const range = document.createRange();
                 const entryBodyFragment = range.createContextualFragment(contents);
 
                 const title = $("div.detail-main .dt-title h2 span.title").text();
-
-                const sapo = $("div.detail-main div.sapo").length>0 ? $("div.detail-main div.sapo").text() : "";
+                const sapo = $("div.detail-main div.sapo").text();
+                const textBody = $("div.detail-main div.dt-content div.entry-body").text();
                 const author = $("div.detail-main div.line-datetime span.anots").text();
                 const dateTime = $("div.detail-main div.line-datetime span:nth-child(2)").text();
                 const result = {
@@ -29,6 +29,7 @@ function useGetDetailNews(url) {
                     content: entryBodyFragment,
                     author: author,
                     dateTime:dateTime,
+                    text:textBody,
                 };
                 setNewsDetail(result);
             })

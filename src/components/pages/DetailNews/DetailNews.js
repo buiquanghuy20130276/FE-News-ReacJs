@@ -40,8 +40,8 @@ function DetailNews() {
                                                 <span className="size-plus">Aa+</span>
                                             </div>
                                         </div>
-                                        <div className="sapo">{data.sapo}</div>
-                                        <Content content={data.content}/>
+                                        <div className="sapo">{data.text}</div>
+                                        {/*<Content content={data.text}/>*/}
                                     </>
                                 ) : (<p>Loading...</p>)
                             }
@@ -52,7 +52,7 @@ function DetailNews() {
                 <div className="sidebar">
                     <button className={style['btn-back']} onClick={()=>back((-1))}>Trở về</button>
                     {/*<div className="banner"><img src={"https://d1j8r0kxyu9tj8.cloudfront.net/files/1582632981Gp4bWNtKphm3XfD.jpg"}/> </div>*/}
-                    {data? <Audio text={data.title}/> : (<p>Loading...</p>)}
+                    {/*{data? <Audio text={data.text}/> : (<p>Loading...</p>)}*/}
                 </div>
             </div>
         </div>
