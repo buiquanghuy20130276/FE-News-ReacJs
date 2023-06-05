@@ -22,7 +22,7 @@ function useGetDetailNews(url) {
                 const sapo = $("div.detail-main div.sapo").text();
                 const textBody = $("div.detail-main div.dt-content div.entry-body").text();
                 const author = $("div.detail-main div.line-datetime span.anots").text();
-                const dateTime = $("div.detail-main div.line-datetime span:nth-child(2)").text();
+                const dateTime = $("div.detail-main div.line-datetime span[data-role='publishdate']").text();
                 const result = {
                     title:title,
                     sapo:sapo,
