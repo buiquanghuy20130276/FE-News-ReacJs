@@ -27,7 +27,9 @@
     "react-dom": "^18.1.0",
     "react-router-dom": "^6.11.0",
     "react-scripts": "5.0.1",
+    "react-slick": "^0.29.0",
     "sentence-splitter": "^4.2.0",
+    "slick-carousel": "^1.8.1",
     "stream-browserify": "^3.0.0",
     "stream-http": "^3.2.0",
     "timers": "^0.1.1",
@@ -39,7 +41,7 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "start-proxy": "react-scripts start --proxy http://localhost:3000",
+    "start-proxy": "react-scripts start --proxy http://localhost:3000/trang-chu",
     "test": "react-app-rewired test",
     "eject": "react-app-rewired eject"
   },

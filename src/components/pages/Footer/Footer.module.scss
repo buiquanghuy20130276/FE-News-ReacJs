@@ -1,0 +1,117 @@
+.wrapper {
+    color: rgba(0, 0, 0, .55);
+    border-radius: 5px;
+  
+    .logo {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 20px;
+      color: rgba(0, 0, 0, .55);
+      border-radius: 5px;
+      margin: 20px 0;
+    }
+  
+    .list-item {
+      display: flex;
+      list-style-type: none;
+      font-weight: 600;
+  
+      padding: 0;
+      a {
+        color: rgba(0, 0, 0, .55);
+      }
+  
+      .item {
+        padding: 10px;
+        cursor: pointer;
+  
+        &:hover {
+          background-color: #f0f0f0;
+          color: #008837;
+          border-radius: 5px;
+  
+          a {
+            color: #008837;
+          }
+  
+        }
+      }
+  
+      .item-active {
+        padding: 10px;
+        cursor: pointer;
+        background-color: #f0f0f0;
+        color: #008837;
+        border-radius: 5px;
+      }
+    }
+  }
+
+.MenuBottom {
+  border-radius: 5px;
+  border-bottom: 1.5px solid rgba(0, 0, 0, .07);
+
+  .framBox{
+      width: 1200px;
+        .size{
+          display: flex;
+          width: 20%;
+          padding: 18px 15px;
+          ul{
+            display:flex;
+            padding: 0;
+            font-weight: 600;
+            li{
+                text-align: center;
+                font-size: 12px;
+                width: max-content;
+                margin-right: 35px;
+                color:#6c6e70;
+                line-height: 1.4rem;
+                cursor: pointer;
+                &:hover {
+                  background-color: #f0f0f0;
+                  color: #008837;
+                  border-radius: 5px;
+
+                  a {
+                   
+                    color: #008837;
+                  }
+          
+                }
+            }
+        }   
+        }
+    }
+
+    //================================================================
+    .info{
+      padding: 18px 35px;
+      display: flex;
+      color: #6c6e70;
+      font-size: 12px;
+      .info-left{
+        width: 50%;
+        .font-style{
+          font-size: 15px;
+          font-weight: 600;
+        }
+      }
+      .info-right{
+        width: 50%;
+        .title-bold{
+          font-size: 15px;
+          color:#202124;
+          font-weight: 600;
+        }
+        .arrow{
+          width: 80px;
+        }
+        .font-style{
+          font-size: 15px;
+          font-weight: 600;
+        }
+      }
+    }
+}

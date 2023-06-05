@@ -1,0 +1,30 @@
+
+.slick-next {
+  right: -13px !important;
+  height: 48px !important;
+  z-index: 1000 !important;
+  width: 44px !important;
+  background: #fff !important;
+  border: 2px solid #d7d7d7 !important;
+  &:hover {
+    background: #eceaea !important;
+  }
+}
+
+.slick-prev {
+    left: -13px !important;
+    height: 48px !important;
+    z-index: 1000 !important;
+    width: 44px !important;
+    background: #fff !important;
+    border: 2px solid #d7d7d7 !important;
+    &:hover {
+      background: #eceaea !important;
+    }
+  }
+
+.slick-prev:before, .slick-next:before {
+  // content: "\e257" !important;
+  color: red !important;
+  font-family: FontAwesome !important;
+}
