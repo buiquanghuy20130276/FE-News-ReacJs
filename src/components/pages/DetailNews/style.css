@@ -4,7 +4,7 @@
 
 .wrapper {
     overflow: scroll;
-    height: 500px;
+    height: 470px;
 }
 
 .wrapper::-webkit-scrollbar {
@@ -47,7 +47,8 @@ i {
 
 .detail-main .line-datetime span {
     font-size: 15px;
-    color: #6c6e70
+    color: #6c6e70;
+    padding: 0px 2px;
 }
 
 .detail-main .line-datetime > span i {
@@ -725,18 +726,17 @@ i {
     margin-left: 8px;
 }
 
-.sidebar {
-    flex: 0.3;
-    top: 100px;
-    right: 10px;
+.sidebar {flex: 0.3; display: block; position: sticky; top:100px; right:10px}
+.banner {width: 100%; display: flex;justify-content: center}
+.banner img {width: 300px}
+/*audio*/
+table th, table td {
+    padding: 5px;
+    border-collapse: collapse;
+    border-color: #999;
+    text-align: left;
+    border-width: 1px;
 }
-
-.banner {
-    width: 100%;
-    display: flex;
-    justify-content: center
-}
-
-.banner img {
-    width: 300px
+.entry-body a {
+    color: #3367d6;
 }

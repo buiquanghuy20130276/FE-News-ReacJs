@@ -6,7 +6,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faClock, faUser} from "@fortawesome/free-solid-svg-icons";
 import style from './style.css';
 import Content from "./Component/Content";
-
+import Audio from "./Component/Audio";
 export const loadNewsDetail = async ({params}) => {
     const {link} = params
     const Url = "/api/" + link
@@ -40,7 +40,6 @@ function DetailNews() {
                                         </div>
                                         <div className="sapo">{data.sapo}</div>
                                         <Content content={data.content}/>
-                                        {/*<RelatedNewsBox relateNews = {data.relatedNews}/>*/}
                                     </>
                                 ) : (<p>Loading...</p>)
                             }
@@ -50,6 +49,8 @@ function DetailNews() {
                 </div>
                 <div className="sidebar">
                     <button className={style['btn-back']} onClick={()=>back((-1))}>Trở về</button>
+                    {/*<div className="banner"><img src={"https://d1j8r0kxyu9tj8.cloudfront.net/files/1582632981Gp4bWNtKphm3XfD.jpg"}/> </div>*/}
+                    {data? <Audio text={data.text}/> : (<p>Loading...</p>)}
 
                 </div>
             </div>
