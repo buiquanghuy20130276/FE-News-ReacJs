@@ -27,9 +27,9 @@ function useGetDetailNews(url) {
                     title:title,
                     sapo:sapo,
                     content: entryBodyFragment,
-                    author: author,
+                    author: author?author:'Anonymous',
                     dateTime:dateTime,
-                    text:textBody,
+                    text:title+sapo+textBody,
                 };
                 setNewsDetail(result);
             })
@@ -38,7 +38,6 @@ function useGetDetailNews(url) {
             });
     }, [url]);
 
-    // return useMemo(() => newsDetail, [newsDetail]);
     return newsDetail;
 }
 

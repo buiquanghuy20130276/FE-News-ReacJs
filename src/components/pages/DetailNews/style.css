@@ -46,7 +46,8 @@ i {
 
 .detail-main .line-datetime span {
     font-size: 15px;
-    color: #6c6e70
+    color: #6c6e70;
+    padding: 0px 2px;
 }
 
 .detail-main .line-datetime > span i {
