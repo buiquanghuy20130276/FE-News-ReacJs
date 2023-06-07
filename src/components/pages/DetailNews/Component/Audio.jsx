@@ -22,7 +22,6 @@ function Audio(props) {
         });
 
         const blob = await res.blob();
-        // setAudioUrl(URL.createObjectURL(blob));
         document.getElementById('audio').src = URL.createObjectURL(blob);
     }
     handle();
