@@ -2,10 +2,10 @@ import axios from 'axios';
 import {useState} from "react";
 
 function Audio(props) {
-    const [audioUrl, setAudioUrl] = useState(null);
-    const handleButtonClick = async () => {
+    async function handle() {
+        console.log('handle');
         const data = {
-            "text": props.text,
+            "text": 'chung ta la chien sy',
             "voice": "hn-quynhanh",
             "id": "2",
             "without_filter": false,
@@ -16,25 +16,21 @@ function Audio(props) {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'token': '8XCd2qQwIkUuUKJg3eeGOtnyXfdpvhX90ea5DDwkapJkRVPB-Bd6Kw0du-2ivzew'
+                'token': 'AUmsqNNLqVnDLEA6pAeX2CkKwWc8IKgvzsQ4xPFYZTqm3psJZMHNfzmrukIXgCRO'
             },
             body: JSON.stringify(data)
         });
 
-        if (!res.ok) {
-            throw new Error('Fetch failed!');
-        }
-
-        const wavFile = await res.blob();
-        document.getElementById('audio').src = URL.createObjectURL(wavFile);
-    };
-
+        const blob = await res.blob();
+        // setAudioUrl(URL.createObjectURL(blob));
+        document.getElementById('audio').src = URL.createObjectURL(blob);
+    }
+    handle();
     return (
         <div>
-            <button onClick={handleButtonClick}>Listen</button>
-            <audio controls id='audio'></audio>
+            <audio id='audio' controls></audio>
         </div>
-
     );
 }
+
 export default Audio;

@@ -29,7 +29,7 @@ function useGetDetailNews(url) {
                     content: entryBodyFragment,
                     author: author?author:'Anonymous',
                     dateTime:dateTime,
-                    text:title+sapo+textBody,
+                    text:title,
                 };
                 setNewsDetail(result);
             })
