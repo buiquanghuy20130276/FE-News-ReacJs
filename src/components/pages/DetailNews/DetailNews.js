@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock, faUser } from "@fortawesome/free-solid-svg-icons";
 import style from './style.css';
 import Content from "./Component/Content";
-import Audio from "./Component/Audio";
 import axios from "axios";
 import cheerio from "cheerio";
 
@@ -22,7 +21,6 @@ function DetailNews() {
     const [title, setTitle] = useState("");
     const [sapo, setSapo] = useState("");
     const [content, setContent] = useState(null);
-    const [text, setText] = useState("");
     const [author, setAuthor] = useState("");
     const [dateTime, setdateTime] = useState("");
 
@@ -49,12 +47,11 @@ function DetailNews() {
                 setTitle(title);
                 setSapo(sapo);
                 setContent(entryBodyFragment);
-                setText(title + sapo + textBody);
                 setAuthor(author);
                 setdateTime(dateTime);
 
                 const data = {
-                    text: "chung ta la chien sy",
+                    text: title+sapo,
                     voice: "hn-quynhanh",
                     id: "2",
                     without_filter: false,
@@ -67,7 +64,7 @@ function DetailNews() {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
-                            token:"XPv3kPR-AfCq68-BWrlyE0BR86aYDzCDomsb-fCrIM0a7BwpkOIMbLbSpP9XPgiR",
+                            token:"H0JzNDuxaN-ZE3OZODp6tnyUTLJxb9IXKglRhMdg4Y4OBnd7O9TRu6LnMmdIOX2I",
                         },
                         body: JSON.stringify(data),
                     }
@@ -108,7 +105,7 @@ function DetailNews() {
                 <div className="sidebar">
                     <button className={style['btn-back']} onClick={() => back((-1))}>Trở về</button>
                     {/*<div className="banner"><img src={"https://d1j8r0kxyu9tj8.cloudfront.net/files/1582632981Gp4bWNtKphm3XfD.jpg"}/> </div>*/}
-                    <Audio text={text}/>
+                    <audio id='audio' controls ></audio>
                 </div>
             </div>
         </div>
