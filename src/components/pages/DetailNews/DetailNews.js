@@ -4,8 +4,9 @@ import Comment from "./Component/Comment";
 import React, {useMemo} from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faClock, faUser} from "@fortawesome/free-solid-svg-icons";
-import style from './style.css';
+import style from './Detail.module.scss';
 import Content from "./Component/Content";
+import TextToSpeech from "./Component/TextToSpeech";
 
 export const loadNewsDetail = async ({params}) => {
     const {link} = params
@@ -18,39 +19,45 @@ function DetailNews() {
     const memoizedUrl = useMemo(() => Url, []);
     const data = useGetDetailNews(memoizedUrl);
     const back = useNavigate();
+
     return (
-        <div className="wrapper">
-            <div className="wrapmain">
-                <div className="main-contain">
-                    <div className="detail-main">
-                        <div className="entry-body">
+        <div className={style["wrapper"]}>
+            <div className={style["wrapmain"]}>
+                <div className={style["main-contain"]}>
+                    <div className={style["detail-main"]}>
+                        <div className={style["entry-body"]}>
                             {data ?
                                 (
                                     <>
-                                        <h2 className="title">{(data.title)}</h2>
-                                        <div className="line-datetime">
+                                        <h2 className={style["title"]}>{(data.title)}</h2>
+                                        <div className={style["line-datetime"]}>
                                             <div>
-                                                <span><FontAwesomeIcon icon={faUser} />{data.author}</span>
-                                                <span data-role="publishdate"><FontAwesomeIcon icon={faClock}/>{data.dateTime}</span>
+                                                <span><FontAwesomeIcon icon={faUser}/>{data.author}</span>
+                                                <span data-role={style["publishdate"]}><FontAwesomeIcon
+                                                    icon={faClock}/>{data.dateTime}</span>
                                             </div>
-                                            <div className="btn-sizep">
-                                                <span className="size-default">Aa</span>
-                                                <span className="size-plus">Aa+</span>
+                                            <div className={style["btn-sizep"]}>
+                                                <span className={style["size-default"]}>Aa</span>
+                                                <span className={style["size-plus"]}>Aa+</span>
                                             </div>
                                         </div>
-                                        <div className="sapo">{data.sapo}</div>
+                                        <div className={style["sapo"]}>{data.sapo}</div>
                                         <Content content={data.content}/>
-                                        {/*<RelatedNewsBox relateNews = {data.relatedNews}/>*/}
                                     </>
                                 ) : (<p>Loading...</p>)
                             }
                         </div>
+                    </div>
+
+                </div>
+                <div className={style["sidebar"]}>
+                    {/*<div className="banner"><img src={"https://d1j8r0kxyu9tj8.cloudfront.net/files/1582632981Gp4bWNtKphm3XfD.jpg"}/> </div>*/}
+                    <div className={style["text-to-speech"]}>
+                        <button className={style['btn-back']} onClick={() => back((-1))}>Trở về</button>
+                        {data ? <TextToSpeech text={data.text}/> : (<p>Loading...</p>)}</div>
+                    <div className={style["comment-fb"]}>
                         <Comment/>
                     </div>
-                </div>
-                <div className="sidebar">
-                    <button className={style['btn-back']} onClick={()=>back((-1))}>Trở về</button>
-
                 </div>
             </div>
         </div>

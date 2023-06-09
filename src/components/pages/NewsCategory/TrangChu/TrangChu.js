@@ -5,7 +5,6 @@ import DataSideBar from "./data/SideBarData";
 import { Link } from "react-router-dom";
 import { handleString } from "../../../toolkit/handleString";
 import SearchContext from "../../Header/SearchContext";
-import './TrangChu.scss';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -71,6 +70,7 @@ function TrangChu() {
             </div>
             <div className={style['img-customize']}>
               <h3>6</h3>
+            </div>
             </div>
           </Slider>
         </div>
