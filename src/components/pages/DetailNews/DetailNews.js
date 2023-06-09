@@ -8,6 +8,7 @@ import style from './Detail.module.scss';
 import Content from "./Component/Content";
 import TextToSpeech from "./Component/TextToSpeech";
 
+import Audio from "./Component/Audio";
 export const loadNewsDetail = async ({params}) => {
     const {link} = params
     const Url = "/api/" + link
@@ -58,6 +59,12 @@ function DetailNews() {
                     <div className={style["comment-fb"]}>
                         <Comment/>
                     </div>
+                </div>
+                <div className="sidebar">
+                    <button className={style['btn-back']} onClick={()=>back((-1))}>Trở về</button>
+                    {/*<div className="banner"><img src={"https://d1j8r0kxyu9tj8.cloudfront.net/files/1582632981Gp4bWNtKphm3XfD.jpg"}/> </div>*/}
+                    {data? <Audio text={data.text}/> : (<p>Loading...</p>)}
+
                 </div>
             </div>
         </div>
