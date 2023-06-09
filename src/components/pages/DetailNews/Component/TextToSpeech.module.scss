@@ -1,0 +1,21 @@
+.wrapper {
+  margin-left: 10px;
+
+  td {
+    padding-left: 20px;
+  }
+
+  .btn {
+    display: flex;
+    justify-content: space-around;
+
+    .btn-item {
+      border: none;
+      background-color: #0075ff;
+      padding: 5px;
+      border-radius: 10px;
+      width: 70px;
+      color: whitesmoke;
+    }
+  }
+}

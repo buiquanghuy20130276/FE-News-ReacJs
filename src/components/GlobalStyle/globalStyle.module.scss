@@ -1,13 +1,17 @@
 .wrapper {
   display: flex;
-  flex-wrap: wrap;
 }
 
 .sideBar {
-  flex: 0.2;
+  flex: 0.3;
   box-shadow: 0 4px 12px 0 rgba(0, 0, 0, .07), 0 2px 4px rgba(0, 0, 0, .05);
   color: rgba(0, 0, 0, .55);
   border-radius: 5px;
+  position: sticky;
+  height: 700px;
+  top: 125px;
+  z-index: 0;
+
 }
 
 .content {
@@ -16,8 +20,6 @@
   color: rgba(0, 0, 0, .55);
   border-radius: 5px;
   margin-left: 10px;
-  overflow: scroll;
-  max-height: 600px;
 
   li {
     cursor: pointer;

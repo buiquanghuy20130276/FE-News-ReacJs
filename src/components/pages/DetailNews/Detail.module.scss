@@ -1,0 +1,180 @@
+.entry-body, .entry-body p {
+  font-family: NotoSerif, sans-serif
+}
+
+.wrapper {
+  overflow: scroll;
+  height: 470px;
+}
+
+.wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.wrapmain {
+  display: flex;
+}
+
+.wrapper .main-contain {
+  width: 650px;
+  margin-right: 30px;
+  flex: 0.7;
+}
+
+i {
+  font-style: italic;
+}
+
+.detail-main .title {
+  font-size: 30px;
+  margin-bottom: 10px;
+  font-family: NotoSerif-Bold, sans-serif;
+  display: block;
+  font-weight: 700
+}
+
+.detail-main .line-datetime {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+
+.detail-main .sapo, p {
+  font-weight: 400;
+  margin-bottom: 15px
+}
+
+.detail-main .line-datetime span {
+  font-size: 15px;
+  color: #6c6e70;
+  padding: 0px 2px;
+}
+
+.detail-main .line-datetime > span i {
+  margin-bottom: -1px
+}
+
+.btn-sizep span {
+  font-weight: 700;
+  color: #6c6e70;
+  padding: 3px 14px;
+  background: #ebebeb;
+  border-radius: 4px;
+  cursor: pointer
+}
+
+.btn-sizep span:last-child {
+  margin-left: 2px
+}
+
+.detail-main .sapo {
+  font-size: 16px;
+  line-height: 26px;
+  font-family: NotoSerif-Bold, sans-serif;
+  color: #6c6e70
+}
+
+
+.detail-main .dt-content {
+  text-align: justify
+}
+
+.entry-body {
+  word-break: break-word;
+  font-size: 17px;
+  line-height: 29px
+}
+
+.entry-body h2 {
+  font-size: 1.5em
+}
+
+
+.entry-body ol, .entry-body ul {
+  list-style: none
+}
+
+.entry-body a {
+  color: #3367d6
+}
+
+.entry-body img {
+  vertical-align: middle;
+  max-width: 100%
+}
+
+.entry-body h2, .entry-body h3, .entry-body h4, .entry-body h5, .entry-body h6 {
+  font-size: inherit;
+  margin: 10px 0 15px;
+  font-weight: 700
+}
+
+.entry-body .img, .entry-body .title {
+  display: block
+}
+
+.entry-body a {
+  text-decoration: unset;
+  color: inherit
+}
+
+
+.entry-body .LayoutAlbumCaptionWrapper .CssImageDescription, .entry-body .LayoutAlbumCaptionWrapper p, .entry-body .PhotoCMS_Caption .CssImageDescription, .entry-body .PhotoCMS_Caption p, .entry-body .VideoCMS_Caption .CssImageDescription, .entry-body .VideoCMS_Caption p {
+  font: 400 13px/18px Arial;
+  text-align: center;
+  color: #666 !important;
+  padding: 10px;
+  background-color: #f2f2f2;
+  margin-top: 0
+}
+
+.entry-body .main-sizel .VCSortableInPreviewMode.alignRight, .entry-body .main-sizel .VCSortableInPreviewMode.alignRightOverflow,
+.entry-body .main-sizel .widget-box.alignRight, .entry-body .main-sizel .widget-box.alignRightOverflow {
+  margin-right: 0;
+}
+
+.sidebar {
+  flex: 0.4;
+  height: 500px;
+  background-color: #f5f4f4;
+  position: sticky;
+  top: 0;
+  overflow: scroll;
+  z-index: 0;
+  margin-left: 20px;
+  border-radius: 10px;
+
+  .comment-fb {
+    margin-left: 40px;
+  }
+
+  .text-to-speech {
+    margin-left: 20px;
+  }
+
+  .btn-back {
+    margin-top: 20px;
+    margin-left: 30px;
+    border: none;
+    background-color: #0075ff;
+    padding: 5px;
+    border-radius: 10px;
+    width: 70px;
+    color: whitesmoke;
+  }
+}
+
+.banner {
+  width: 100%;
+  display: flex;
+  justify-content: center
+}
+
+.banner img {
+  width: 300px
+}
+
+.entry-body a {
+  color: #3367d6;
+}
