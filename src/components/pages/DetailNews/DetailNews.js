@@ -6,12 +6,8 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faClock, faUser} from "@fortawesome/free-solid-svg-icons";
 import style from './Detail.module.scss';
 import Content from "./Component/Content";
-<<<<<<< HEAD
 import TextToSpeech from "./Component/TextToSpeech";
 
-=======
-import Audio from "./Component/Audio";
->>>>>>> f6aacbe5470a7e7c2fd944301d86dc37d34f9817
 export const loadNewsDetail = async ({params}) => {
     const {link} = params
     const Url = "/api/" + link
@@ -23,7 +19,7 @@ function DetailNews() {
     const memoizedUrl = useMemo(() => Url, []);
     const data = useGetDetailNews(memoizedUrl);
     const back = useNavigate();
-
+    const newUrl = Url.replace("/api/", "");
     return (
         <div className={style["wrapper"]}>
             <div className={style["wrapmain"]}>
@@ -60,18 +56,9 @@ function DetailNews() {
                         <button className={style['btn-back']} onClick={() => back((-1))}>Trở về</button>
                         {data ? <TextToSpeech text={data.text}/> : (<p>Loading...</p>)}</div>
                     <div className={style["comment-fb"]}>
-                        <Comment/>
+                        <Comment data={newUrl} />
                     </div>
                 </div>
-<<<<<<< HEAD
-=======
-                <div className="sidebar">
-                    <button className={style['btn-back']} onClick={()=>back((-1))}>Trở về</button>
-                    {/*<div className="banner"><img src={"https://d1j8r0kxyu9tj8.cloudfront.net/files/1582632981Gp4bWNtKphm3XfD.jpg"}/> </div>*/}
-                    {data? <Audio text={data.text}/> : (<p>Loading...</p>)}
-
-                </div>
->>>>>>> f6aacbe5470a7e7c2fd944301d86dc37d34f9817
             </div>
         </div>
     )
