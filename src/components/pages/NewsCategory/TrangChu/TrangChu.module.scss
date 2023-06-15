@@ -1,40 +1,86 @@
-.wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  .section-specialty{
-    height: 330px;
-    background: #f5f5f5;
-    border: 1px solid red;
-    width: 100%;
-    .specialty-content{
-      margin: 0 50px;
-    
-    }
-    .img-customize{
-      height: 300px;
-      border: 1px solid green;
-    }
-  }
-  .content-list {
-    list-style-type: none;
-    padding: 15px;
-    .content-item {
-      display: flex;
-      margin-bottom: 10px;
-      box-shadow: 0 4px 12px 0 rgba(0, 0, 0, .07), 0 2px 4px rgba(0, 0, 0, .05);
+.wrapper{
+  width:1200px;
+  margin: 0 auto;
+  padding: 0;
+  .wrapperHome {
+    z-index: 1;
+    display: flex;
+    margin-bottom: 30px;
+    width: 500px;
+    .swiper-wrapper{
+      border: 1.5 solid rgba(255, 255, 255, 0.5);
+      width: 425px !important;
+      margin-right: 26px !important;
   
-      .img-content-item {
-        padding: 10px;
-        border-radius: 10px;
-      }
-  
-      .block-content-item {
+      .block-content {
         padding-top: 20px;
         margin: 0 20px;
   
+        .content-title{
+          width: 400px;
+          height: 200px;
+          font-size: 24px;
+          font-weight: bold;
+          padding-bottom: 5px;
+          
+        }
+      }
+   
+    }
+    .image-item{
+      width: 400px;
+      height: 266px;
+      padding: 10px;
+      bottom: 0;
+    }
+  }
+  .content-note{
+    width: 400px;
+    ul {
+      list-style: none;
+      
+      .item{
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #eee;
+        width: 400px;
+        .wrap-title-news{
+  
+          .small-title{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+  .adscode{
+    padding-right: 0px;
+    width: 300px;
+    position: relative;
+    .advertise{
+      border-top: 1px solid #008837;
+      border-bottom: 1px solid #008837;
+      span{    
+      color: #008837!important;
+      font-weight: 600;
+      font-size: 9px!important;
+      z-index: 1;
+      position: relative;
+      background: transparent!important;
+      padding-top: 4px;
+      border-top-left-radius: 10px;
+      line-height: 8px;
+      padding-right: 8px;
+      text-transform: capitalize;
       }
     }
   }
 }
+
+
+          
+        
 
 
