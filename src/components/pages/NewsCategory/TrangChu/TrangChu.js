@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import style from "./TrangChu.module.scss";
+import css from "./TrangChu.module.scss";
 import { useRssFeed } from "../../../../data/useRssFeed";
 import DataSideBar from "./data/SideBarData";
 import { Link } from "react-router-dom";
@@ -9,13 +9,21 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css'
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+
 const tabs = DataSideBar;
 
 function TrangChu() {
-  const [title, setTitle] = useState("Chuyện của sao");
   const [type, setType] = useState("chuyen-cua-sao-1105");
+  //nhận vào một thể loại lấy ra ds
   const feed = useRssFeed(type);
   const { searchTerm } = useContext(SearchContext);
+
   const filteredFeed = feed.filter((post) => {
     const postTitle = post.title.toLowerCase();
     const postDescription = post.description.toLowerCase();
@@ -26,78 +34,104 @@ function TrangChu() {
     );
   });
 
-  let settings = {
-    dots: false,
-    infiniti: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-  };
   return (
-    <div className={style["wrapper"]}>
-      <div className={style["section-specialty"]}>
-        <div className={style["specialty-content"]}>
-          <Slider {...settings}>
-            <div className={style['img-customize']}>
-              <h3>1</h3>
-            </div>
-            <div className={style['box-new']}>
-                <ul className={style['content-list']}>
-                    {filteredFeed.map((post, index) => (
-                        <Link style={{ color: "#737373" }} key={index} to={`/detail/${handleString(post.link)}`}>
-                            <li className={style['content-item']}>
-                                <img className={style['img-content-item']} src={post.imageUrl} alt={post.title} />
-                                <div className={style['block-content-item']}>
-                                    <h3 className={style['content-item-title']}>{post.title}</h3>
-                                    <p>{post.description}</p>
-                                    <p className={style['pubdate']}>{post.pubDate}</p>
-                                </div>
-                            </li>
-                        </Link>
-                    ))}
-                </ul>
-            <div className={style['img-customize']}>
-              <h3>2</h3>
-            </div>
-            <div className={style['img-customize']}>
-              <h3>3</h3>
-            </div>
-            <div className={style['img-customize']}>
-              <h3>4</h3>
-            </div>
-            <div className={style['img-customize']}>
-              <h3>5</h3>
-            </div>
-            <div className={style['img-customize']}>
-              <h3>6</h3>
-            </div>
-            </div>
-          </Slider>
-        </div>
-      </div>
-      <div className={style["box-new"]}>
-        <ul className={style["content-list"]}>
-          {filteredFeed.map((post, index) => (
-            <Link
-              style={{ color: "#737373" }}
+    <div className={css["wrapper"]}>
+      <div className={css["wrapperHome"]}>
+      <Swiper
+      spaceBetween={50}
+      slidesPerView={1}
+      // navigation
+      // pagination={{ clickable: true }}
+      // scrollbar={{ draggable: true }}
+      onSlideChange={() => console.log('slide change')}
+      onSwiper={(swiper) => console.log(swiper)}
+      >
+      {filteredFeed.map((post, index) => (
+        <SwiperSlide  key={index}>
+          <Link
+              style={{ color: "#333" }}
               key={index}
               to={`/detail/${handleString(post.link)}`}
             >
-              <li className={style["content-item"]}>
-                <img
-                  className={style["img-content-item"]}
+                <div className={css["block-content"]}>
+                  <h3 className={css["content-title"]}>{post.title}</h3>
+                </div>
+                <img className={css["image-item"]}
                   src={post.imageUrl}
                   alt={post.title}
-                />
-                <div className={style["block-content-item"]}>
-                  <h3 className={style["content-item-title"]}>{post.title}</h3>
-                  <p>{post.description}</p>
-                </div>
-              </li>
+                  />
             </Link>
+        </SwiperSlide>
+            
           ))}
-        </ul>
+     
+    </Swiper>
+    <div className={css["content-note"]}>
+      <ul className={css["homehl-small"]}>
+      <li className={css["item count-cmt loadedcmt"]}>
+        <div className={css["wrap-title-news"]}>
+          <h3 className={css["small-title"]}>
+            <Link
+              style={{ color: "#333" }}
+              // key={index}
+              // to={`/detail/${handleString(post.link)}`}
+            >
+              Title 1
+            </Link>
+          </h3>
+        </div>
+      </li>
+      <li className={css["item count-cmt loadedcmt"]}>
+        <div className={["wrap-title-news"]}>
+          <h3 className={css["small-title"]}>
+            <Link
+              style={{ color: "#333" }}
+              // key={index}
+              // to={`/detail/${handleString(post.link)}`}
+            >
+              Title 2
+            </Link>
+          </h3>
+        </div>
+      </li>
+      <li className={css["item count-cmt loadedcmt"]}>
+        <div className={["wrap-title-news"]}>
+          <h3 className={css["small-title"]}>
+            <Link
+              style={{ color: "#333" }}
+              // key={index}
+              // to={`/detail/${handleString(post.link)}`}
+            >
+              Title 3
+            </Link>
+          </h3>
+        </div>
+      </li>
+      <li className={css["item count-cmt loadedcmt"]}>
+        <div className={css["wrap-title-news"]}>
+          <h3 className={css["small-title"]}>
+            <Link
+              style={{ color: "#333" }}
+              // key={index}
+              // to={`/detail/${handleString(post.link)}`}
+            >
+              Title 4
+            </Link>
+          </h3>
+        </div>
+      </li>
+      </ul>
+    </div>
+    
+    
+    <div className={css["adscode"]}>
+      <div className={css["advertise"]}>
+        <span>
+          Quảng Cáo 
+        </span>
       </div>
+    </div>
+    </div>
     </div>
   );
 }
