@@ -6,15 +6,6 @@ import { Link } from "react-router-dom";
 import { handleString } from "../../../toolkit/handleString";
 import SearchContext from "../../Header/SearchContext";
 
-
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css'
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-
-
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css'
