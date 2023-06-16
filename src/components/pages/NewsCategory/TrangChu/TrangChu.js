@@ -5,9 +5,15 @@ import DataSideBar from "./data/SideBarData";
 import { Link } from "react-router-dom";
 import { handleString } from "../../../toolkit/handleString";
 import SearchContext from "../../Header/SearchContext";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
+
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css'
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -25,6 +31,7 @@ function TrangChu() {
   const { searchTerm } = useContext(SearchContext);
 
   const filteredFeed = feed.filter((post) => {
+    
     const postTitle = post.title.toLowerCase();
     const postDescription = post.description.toLowerCase();
     const searchTermLowerCase = searchTerm.toLowerCase();
@@ -34,10 +41,13 @@ function TrangChu() {
     );
   });
 
+  const listTitle = filteredFeed.slice(0,4)
+  
   return (
     <div className={css["wrapper"]}>
       <div className={css["wrapperHome"]}>
-      <Swiper
+        <div className={css["swipper-size"]}>
+        <Swiper
       spaceBetween={50}
       slidesPerView={1}
       // navigation
@@ -48,6 +58,9 @@ function TrangChu() {
       >
       {filteredFeed.map((post, index) => (
         <SwiperSlide  key={index}>
+
+          <div className={css['swiper-size']}>
+
           <Link
               style={{ color: "#333" }}
               key={index}
@@ -61,63 +74,35 @@ function TrangChu() {
                   alt={post.title}
                   />
             </Link>
+
+          </div>
+
         </SwiperSlide>
             
           ))}
      
     </Swiper>
+
+        </div>
+
     <div className={css["content-note"]}>
       <ul className={css["homehl-small"]}>
       <li className={css["item count-cmt loadedcmt"]}>
         <div className={css["wrap-title-news"]}>
-          <h3 className={css["small-title"]}>
+
+        {listTitle.map((post, index) => (
             <Link
               style={{ color: "#333" }}
-              // key={index}
-              // to={`/detail/${handleString(post.link)}`}
+              key={index}
+              to={`/detail/${handleString(post.link)}`}
             >
-              Title 1
+              <h3 className={css["small-title"]}>
+                {post.title}
+              </h3>
+              <div className={css["box-title"]}></div>
             </Link>
-          </h3>
-        </div>
-      </li>
-      <li className={css["item count-cmt loadedcmt"]}>
-        <div className={["wrap-title-news"]}>
-          <h3 className={css["small-title"]}>
-            <Link
-              style={{ color: "#333" }}
-              // key={index}
-              // to={`/detail/${handleString(post.link)}`}
-            >
-              Title 2
-            </Link>
-          </h3>
-        </div>
-      </li>
-      <li className={css["item count-cmt loadedcmt"]}>
-        <div className={["wrap-title-news"]}>
-          <h3 className={css["small-title"]}>
-            <Link
-              style={{ color: "#333" }}
-              // key={index}
-              // to={`/detail/${handleString(post.link)}`}
-            >
-              Title 3
-            </Link>
-          </h3>
-        </div>
-      </li>
-      <li className={css["item count-cmt loadedcmt"]}>
-        <div className={css["wrap-title-news"]}>
-          <h3 className={css["small-title"]}>
-            <Link
-              style={{ color: "#333" }}
-              // key={index}
-              // to={`/detail/${handleString(post.link)}`}
-            >
-              Title 4
-            </Link>
-          </h3>
+            ))}
+
         </div>
       </li>
       </ul>
@@ -132,6 +117,10 @@ function TrangChu() {
       </div>
     </div>
     </div>
+
+    <div className={css["arrow"]}></div>
+
+
     </div>
   );
 }
