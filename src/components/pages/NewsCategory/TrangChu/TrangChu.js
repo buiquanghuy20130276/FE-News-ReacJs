@@ -31,7 +31,6 @@ function TrangChu() {
       postDescription.includes(searchTermLowerCase)
     );
   });
-
   const listTitle = filteredFeed.slice(0,4)
   
   return (
@@ -49,9 +48,7 @@ function TrangChu() {
       >
       {filteredFeed.map((post, index) => (
         <SwiperSlide  key={index}>
-
           <div className={css['swiper-size']}>
-
           <Link
               style={{ color: "#333" }}
               key={index}
@@ -65,22 +62,17 @@ function TrangChu() {
                   alt={post.title}
                   />
             </Link>
-
           </div>
-
         </SwiperSlide>
             
           ))}
      
     </Swiper>
-
         </div>
-
     <div className={css["content-note"]}>
       <ul className={css["homehl-small"]}>
       <li className={css["item count-cmt loadedcmt"]}>
         <div className={css["wrap-title-news"]}>
-
         {listTitle.map((post, index) => (
             <Link
               style={{ color: "#333" }}
@@ -93,7 +85,6 @@ function TrangChu() {
               <div className={css["box-title"]}></div>
             </Link>
             ))}
-
         </div>
       </li>
       </ul>
@@ -108,9 +99,7 @@ function TrangChu() {
       </div>
     </div>
     </div>
-
     <div className={css["arrow"]}></div>
-
 
     </div>
   );
