@@ -110,6 +110,11 @@ function TrangChu() {
 
   const listTitle = filteredFeed.slice(0,4);
   const listTT = filteredFeedTT.slice(0,5);
+  const listTG = filteredFeedTG.slice(0,5);
+  const listNN = filteredFeedNN.slice(0,5);
+  const listTTh = filteredFeedTTh.slice(0,5);
+  const listPL = filteredFeedPL.slice(0,5);
+
   return (
     <div className={css["wrapper"]}>
       <div className={css["wrapperHome"]}>
@@ -202,9 +207,9 @@ function TrangChu() {
     <div className={css["arrow"]}></div>
 
     {/* part2 TinTuc */}
-    <div className="part-2">
+    <div className={css["part-2"]}>
       <div className={css["title-top"]}>Tin Tức</div>
-      <ul>
+      <ul className={css["home-boxlist"]}>
       {listTT.map((post, index) => (
         <Link
         style={{ color: "#333" }}
@@ -212,13 +217,13 @@ function TrangChu() {
               to={`/detail/${handleString(post.link)}`}
         >             
             <li className={css["item-boxlist"]}>
-              <img className={css["image-item"]}
+              <img className={css["image-item-list"]}
                       src={post.imageUrl}
                       alt={post.title}
               />
               <div className={css["title-box"]}>
                 <div className={css["wrap-title-news"]}>
-                  <h3 className={css["small-title"]}>
+                  <h3 className={css["small-title-XL"]}>
                     {post.title}
                   </h3>
                   <p>{post.description}</p>
@@ -227,7 +232,127 @@ function TrangChu() {
               </div>
             </li>
             </Link>
-                ))}
+          ))}
+      </ul>
+    </div>
+
+    {/* The Gioi */}
+    <div className={css["part-2"]}>
+      <div className={css["title-top"]}>Thế Giới</div>
+      <ul className={css["home-boxlist"]}>
+      {listTG.map((post, index) => (
+        <Link
+        style={{ color: "#333" }}
+              key={index}
+              to={`/detail/${handleString(post.link)}`}
+        >             
+            <li className={css["item-boxlist"]}>
+              <img className={css["image-item-list"]}
+                      src={post.imageUrl}
+                      alt={post.title}
+              />
+              <div className={css["title-box"]}>
+                <div className={css["wrap-title-news"]}>
+                  <h3 className={css["small-title-XL"]}>
+                    {post.title}
+                  </h3>
+                  <p>{post.description}</p>
+                  <p className={css["pub-date"]}>{post.pubDate}</p>
+                </div>
+              </div>
+            </li>
+            </Link>
+          ))}
+      </ul>
+    </div>
+
+    {/* Nông Nghiệp */}
+    <div className={css["part-2"]}>
+      <div className={css["title-top"]}>Nông Nghiệp</div>
+      <ul className={css["home-boxlist"]}>
+      {listNN.map((post, index) => (
+        <Link
+        style={{ color: "#333" }}
+              key={index}
+              to={`/detail/${handleString(post.link)}`}
+        >             
+            <li className={css["item-boxlist"]}>
+              <img className={css["image-item-list"]}
+                      src={post.imageUrl}
+                      alt={post.title}
+              />
+              <div className={css["title-box"]}>
+                <div className={css["wrap-title-news"]}>
+                  <h3 className={css["small-title-XL"]}>
+                    {post.title}
+                  </h3>
+                  <p>{post.description}</p>
+                  <p className={css["pub-date"]}>{post.pubDate}</p>
+                </div>
+              </div>
+            </li>
+            </Link>
+          ))}
+      </ul>
+    </div>
+
+    {/* Thể Thao */}
+    <div className={css["part-2"]}>
+      <div className={css["title-top"]}>Thể Thao</div>
+      <ul className={css["home-boxlist"]}>
+      {listTTh.map((post, index) => (
+        <Link
+        style={{ color: "#333" }}
+              key={index}
+              to={`/detail/${handleString(post.link)}`}
+        >             
+            <li className={css["item-boxlist"]}>
+              <img className={css["image-item-list"]}
+                      src={post.imageUrl}
+                      alt={post.title}
+              />
+              <div className={css["title-box"]}>
+                <div className={css["wrap-title-news"]}>
+                  <h3 className={css["small-title-XL"]}>
+                    {post.title}
+                  </h3>
+                  <p>{post.description}</p>
+                  <p className={css["pub-date"]}>{post.pubDate}</p>
+                </div>
+              </div>
+            </li>
+            </Link>
+          ))}
+      </ul>
+    </div>
+    
+    {/* Pháp Luật */}
+    <div className={css["part-2"]}>
+      <div className={css["title-top"]}>Pháp Luật</div>
+      <ul className={css["home-boxlist"]}>
+      {listPL.map((post, index) => (
+        <Link
+        style={{ color: "#333" }}
+              key={index}
+              to={`/detail/${handleString(post.link)}`}
+        >             
+            <li className={css["item-boxlist"]}>
+              <img className={css["image-item-list"]}
+                      src={post.imageUrl}
+                      alt={post.title}
+              />
+              <div className={css["title-box"]}>
+                <div className={css["wrap-title-news"]}>
+                  <h3 className={css["small-title-XL"]}>
+                    {post.title}
+                  </h3>
+                  <p>{post.description}</p>
+                  <p className={css["pub-date"]}>{post.pubDate}</p>
+                </div>
+              </div>
+            </li>
+            </Link>
+          ))}
       </ul>
     </div>
 
