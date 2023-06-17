@@ -51,7 +51,6 @@ function DetailNews() {
 
                 </div>
                 <div className={style["sidebar"]}>
-                    {/*<div className="banner"><img src={"https://d1j8r0kxyu9tj8.cloudfront.net/files/1582632981Gp4bWNtKphm3XfD.jpg"}/> </div>*/}
                     <div className={style["text-to-speech"]}>
                         <button className={style['btn-back']} onClick={() => back((-1))}>Trở về</button>
                         {data ? <TextToSpeech text={data.text}/> : (<p>Loading...</p>)}</div>

@@ -11,7 +11,7 @@ const TextToSpeech = ({ text }) => {
     const voices = synth.getVoices();
     useEffect(() => {
         const u = new SpeechSynthesisUtterance(text);
-
+        u.lang ="vi-VN";
         setSpeech(u);
         return () => {
             synth.cancel();
@@ -20,7 +20,6 @@ const TextToSpeech = ({ text }) => {
 
     const handlePlay = () => {
         const synth = window.speechSynthesis;
-
         if (isPaused) {
             synth.resume();
         } else {
@@ -30,7 +29,6 @@ const TextToSpeech = ({ text }) => {
             speech.volume = volume;
             synth.speak(speech);
         }
-
         setIsPaused(false);
     };
 
@@ -65,9 +63,7 @@ const TextToSpeech = ({ text }) => {
 
     return (
         <div className={style["wrapper"]}>
-
             <br />
-
             <label>
                 <table>
                     <tr>
@@ -82,7 +78,6 @@ const TextToSpeech = ({ text }) => {
                         /></td>
                     </tr>
                     <br/>
-
                     <tr>
                         <td>Tốc độ nói:</td>
                         <td className={style["input"]}><input
@@ -109,10 +104,8 @@ const TextToSpeech = ({ text }) => {
                     </tr>
                 </table>
             </label>
-
             <br />
             <br />
-
             <div  className={style["btn"]}>
                 <button className={style["btn-item"]} onClick={handlePlay}>{isPaused ? "Tiếp tục" : "Đọc"}</button>
                 <button className={style["btn-item"]} onClick={handlePause}>Pause</button>
