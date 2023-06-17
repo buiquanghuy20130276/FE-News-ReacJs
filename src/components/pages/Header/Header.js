@@ -3,12 +3,12 @@ import 'tippy.js/dist/tippy.css';
 
 import style from './Header.module.scss'
 import HeaderData from "./HeaderData";
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import SearchContext from "./SearchContext";
 
 export default function Header() {
-    const [active, setActive] = useState('');
     const {seachTerm, setSearchTerm} = useContext(SearchContext)
+    const [activeIndex, setActiveIndex] = useState(0);
 
 
     return (
@@ -23,14 +23,14 @@ export default function Header() {
             </div>
             <div className={style['navBar']}>
                 <ul className={style['list-item']}>{HeaderData.map((data, index) => (
-                    <Link key={index} to={data.path}
-                          className={data.path === active ? style['item-active'] : style['item']}
-                          onClick={() => setActive(data.path)
+                    <NavLink key={index} to={data.path}
+                          className={index === activeIndex ? style['item-active'] : style['item']}
+                          onClick={ () => setActiveIndex(index)
                           }>
                         <li>
                             {data.name}
                         </li>
-                    </Link>
+                    </NavLink>
                 ))}
                 </ul>
             </div>

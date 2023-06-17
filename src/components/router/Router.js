@@ -6,7 +6,7 @@ import TheThao from "../pages/NewsCategory/TheThao/TheThao";
 import NongNghiep from "../pages/NewsCategory/NongNghiep/NongNghiep";
 import PhapLuat from "../pages/NewsCategory/PhapLuat/PhapLuat";
 import DetailNews, {loadNewsDetail} from "../pages/DetailNews/DetailNews";
-import Error from "../pages/Error/Error";
+import TrangChu from "../pages/NewsCategory/TrangChu/TrangChu";
 import KinhTe from "../pages/NewsCategory/KinhTe/KinhTe";
 import GiaoDuc from "../pages/NewsCategory/GiaoDuc/GiaoDuc";
 import DoiSong from "../pages/NewsCategory/DoiSong/DoiSong";
@@ -19,6 +19,11 @@ const Router = createBrowserRouter([{
     element: <App/>,
     children: [
         {
+            path: '/',
+            element: <TrangChu/>,
+
+        },
+        {
             path: 'tin-tuc',
             element: <TinTuc/>,
         },
@@ -26,7 +31,6 @@ const Router = createBrowserRouter([{
             path: 'detail/:link',
             element: <DetailNews/>,
             loader:loadNewsDetail,
-            // errorElement:<Error/>
         },
         {
             path: 'the-gioi',

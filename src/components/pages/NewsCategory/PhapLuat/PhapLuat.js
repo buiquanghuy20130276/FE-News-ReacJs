@@ -4,9 +4,8 @@ import {faAngleDoubleRight} from "@fortawesome/free-solid-svg-icons";
 import style from './PhapLuat.module.scss'
 import {useRssFeed} from "../../../../data/useRssFeed";
 import DataSideBar from "./data/SideBarData";
-import {Link} from "react-router-dom";
-import {handleString} from "../../../toolkit/handleString";
 import SearchContext from "../../Header/SearchContext";
+import ItemNews from "../../../layouts/ItemNews/ItemNews";
 
 const tabs = DataSideBar
 
@@ -14,13 +13,7 @@ function PhapLuat() {
     const [title, setTitle] = useState('Pháp luật')
     const [type, setType] = useState('phap-luat-1008')
     const feed = useRssFeed(type);
-    const {searchTerm}=useContext(SearchContext)
-    const filteredFeed = feed.filter((post) => {
-        const postTitle = post.title.toLowerCase();
-        const postDescription = post.description.toLowerCase();
-        const searchTermLowerCase = searchTerm.toLowerCase();
-        return (postTitle.includes(searchTermLowerCase) || postDescription.includes(searchTermLowerCase));
-    });
+
     return (
         <div className={style['wrapper']}>
             <div className={style['sideBar']}>
@@ -45,21 +38,8 @@ function PhapLuat() {
 
                     </ol>
                 </div>
-                <div>
-                    <ul className={style['content-list']}>
-                        {filteredFeed.map((post, index) => (
-                            <Link style={{ color: "#737373" }} key={index} to={`/detail/${handleString(post.link)}`}>
-                                <li className={style['content-item']}>
-                                    <img className={style['img-content-item']} src={post.imageUrl} alt={post.title} />
-                                    <div className={style['block-content-item']}>
-                                        <h3 className={style['content-item-title']}>{post.title}</h3>
-                                        <p>{post.description}</p>
-                                    </div>
-                                </li>
-                            </Link>
-                        ))}
-                    </ul>
-                </div>
+                <ItemNews data={feed}/>
+
             </div>
         </div>
     )
