@@ -24,6 +24,7 @@ export default function Footer() {
               <ul className="list-unstyled mb-0">
                 {FooterData.map((dataFooter, index) => (
                   <Link to={dataFooter.path}
+                    key={index}
                     className={
                       dataFooter.path === active
                         ? style["item-active"]

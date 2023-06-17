@@ -5,6 +5,9 @@ import DataSideBar from "./data/SideBarData";
 import { Link } from "react-router-dom";
 import { handleString } from "../../../toolkit/handleString";
 import SearchContext from "../../Header/SearchContext";
+import qc_tiger from "../TrangChu/img/qc_tiger.png";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faComments} from "@fortawesome/free-solid-svg-icons";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -97,9 +100,33 @@ function TrangChu() {
           Quảng Cáo 
         </span>
       </div>
-    </div>
+      {/* Quang cao */}
+      <div className={css["widget"]}>
+      <div className={css["title-top"]}>
+         Thực phẩm & Đồ uống
+      </div>
+      <div className={css["item"]}>
+        <div className={css["box-img"]}>
+          <img className={css["image-item"]}
+                  src={qc_tiger}
+          />
+        </div>
+        <div className={css["box-title"]}>
+          <a href="https://www.facebook.com/TuborgVietnam">
+          <div className={css["wrap-title-news"]}>
+            <h3 className={css["count"]}>Nghiêng Chiều Nào Vui Chiều Đó </h3>
+              <div className={css["comment-wrap"]}>
+                <FontAwesomeIcon icon={faComments} />
+              </div>
+          </div>
+          </a>
+        </div>
+      </div>
+      </div>
+      </div>
     </div>
     <div className={css["arrow"]}></div>
+    
 
     </div>
   );
