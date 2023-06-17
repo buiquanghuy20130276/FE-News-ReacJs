@@ -19,11 +19,23 @@ import 'swiper/css/scrollbar';
 const tabs = DataSideBar;
 
 function TrangChu() {
-  const [type, setType] = useState("chuyen-cua-sao-1105");
+  const [typeVHGT, setType] = useState("chuyen-cua-sao-1105");
+  const [typeTT, setTypeTT] = useState("xa-hoi-1003");
+  const [typeTG, setTypeTG] = useState("diem-nong-1061");
+  const [typeNN, setTypeNN] = useState("thi-truong-nong-san-1123");
+  const [typeTTh, setTypeTTh] = useState("bong-da-1036");
+  const [typePL, setTypePL] = useState("an-ninh-trat-tu-1068");
   //nhận vào một thể loại lấy ra ds
-  const feed = useRssFeed(type);
+  const feed = useRssFeed(typeVHGT);
+  const feedTT = useRssFeed(typeTT);
+  const feedTG = useRssFeed(typeTG);
+  const feedNN = useRssFeed(typeNN);
+  const feedTTh = useRssFeed(typeTTh);
+  const feedPL = useRssFeed(typePL);
+
   const { searchTerm } = useContext(SearchContext);
 
+  //VHGT
   const filteredFeed = feed.filter((post) => {
     
     const postTitle = post.title.toLowerCase();
@@ -34,8 +46,70 @@ function TrangChu() {
       postDescription.includes(searchTermLowerCase)
     );
   });
-  const listTitle = filteredFeed.slice(0,4)
-  
+
+
+  //Tin Tuc
+  const filteredFeedTT = feedTT.filter((post) => {
+    
+    const postTitle = post.title.toLowerCase();
+    const postDescription = post.description.toLowerCase();
+    const searchTermLowerCase = searchTerm.toLowerCase();
+    return (
+      postTitle.includes(searchTermLowerCase) ||
+      postDescription.includes(searchTermLowerCase)
+    );
+  });
+
+  //The Gioi
+  const filteredFeedTG = feedTG.filter((post) => {
+    
+    const postTitle = post.title.toLowerCase();
+    const postDescription = post.description.toLowerCase();
+    const searchTermLowerCase = searchTerm.toLowerCase();
+    return (
+      postTitle.includes(searchTermLowerCase) ||
+      postDescription.includes(searchTermLowerCase)
+    );
+  });
+
+  //Nong Nghiep
+  const filteredFeedNN = feedNN.filter((post) => {
+    
+    const postTitle = post.title.toLowerCase();
+    const postDescription = post.description.toLowerCase();
+    const searchTermLowerCase = searchTerm.toLowerCase();
+    return (
+      postTitle.includes(searchTermLowerCase) ||
+      postDescription.includes(searchTermLowerCase)
+    );
+  });
+
+  //The Thao
+  const filteredFeedTTh = feedTTh.filter((post) => {
+    
+    const postTitle = post.title.toLowerCase();
+    const postDescription = post.description.toLowerCase();
+    const searchTermLowerCase = searchTerm.toLowerCase();
+    return (
+      postTitle.includes(searchTermLowerCase) ||
+      postDescription.includes(searchTermLowerCase)
+    );
+  });
+
+  //Phap Luat
+  const filteredFeedPL = feedPL.filter((post) => {
+    
+    const postTitle = post.title.toLowerCase();
+    const postDescription = post.description.toLowerCase();
+    const searchTermLowerCase = searchTerm.toLowerCase();
+    return (
+      postTitle.includes(searchTermLowerCase) ||
+      postDescription.includes(searchTermLowerCase)
+    );
+  });
+
+  const listTitle = filteredFeed.slice(0,4);
+  const listTT = filteredFeedTT.slice(0,5);
   return (
     <div className={css["wrapper"]}>
       <div className={css["wrapperHome"]}>
@@ -126,7 +200,36 @@ function TrangChu() {
       </div>
     </div>
     <div className={css["arrow"]}></div>
-    
+
+    {/* part2 TinTuc */}
+    <div className="part-2">
+      <div className={css["title-top"]}>Tin Tức</div>
+      <ul>
+      {listTT.map((post, index) => (
+        <Link
+        style={{ color: "#333" }}
+              key={index}
+              to={`/detail/${handleString(post.link)}`}
+        >             
+            <li className={css["item-boxlist"]}>
+              <img className={css["image-item"]}
+                      src={post.imageUrl}
+                      alt={post.title}
+              />
+              <div className={css["title-box"]}>
+                <div className={css["wrap-title-news"]}>
+                  <h3 className={css["small-title"]}>
+                    {post.title}
+                  </h3>
+                  <p>{post.description}</p>
+                  <p className={css["pub-date"]}>{post.pubDate}</p>
+                </div>
+              </div>
+            </li>
+            </Link>
+                ))}
+      </ul>
+    </div>
 
     </div>
   );
