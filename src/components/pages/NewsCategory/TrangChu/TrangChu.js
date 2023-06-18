@@ -11,6 +11,7 @@ import qc_myPham from "../TrangChu/img/lazada.jpg";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faComments} from "@fortawesome/free-solid-svg-icons";
 import {faCity} from "@fortawesome/free-solid-svg-icons";
+import {faCircleArrowUp} from "@fortawesome/free-solid-svg-icons";
 import data from "../KinhTe/data/SideBarData";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -28,8 +29,9 @@ function TrangChu() {
   const [typeNN, setTypeNN] = useState("thi-truong-nong-san-1123");
   const [typeTTh, setTypeTTh] = useState("bong-da-1036");
   const [typePL, setTypePL] = useState("an-ninh-trat-tu-1068");
-  
   const [typeKT, setTypeKT] = useState("goc-nhin-chuyen-gia-1127");
+
+  const [isVisible, setIsVisible] = useState(false);
 
   //nhận vào một thể loại lấy ra ds
   const feed = useRssFeed(typeVHGT);
@@ -41,7 +43,7 @@ function TrangChu() {
   const feedKT = useRssFeed(typeKT);
 
   const { searchTerm } = useContext(SearchContext);
-
+  //=============================================================================================
   //VHGT
   const filteredFeed = feed.filter((post) => {
     
@@ -114,7 +116,7 @@ function TrangChu() {
       postDescription.includes(searchTermLowerCase)
     );
   });
-
+//=============================================================================================
   const listTitle = filteredFeed.slice(0,4);
   const listTT = filteredFeedTT.slice(0,5);
   const listTG = filteredFeedTG.slice(0,5);
@@ -128,8 +130,32 @@ function TrangChu() {
     setTypeKT(selectedPath);
   };
   
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
   // set TimeSwiper
   const swiperRef = useRef(null);
+  console.log(window.scrollY);
 
   useEffect(() => {
     const swiper = swiperRef.current.swiper;
@@ -439,7 +465,20 @@ function TrangChu() {
     </div>
     </div>
     </div>
-    
+    {isVisible && (
+      <button onClick={scrollToTop} 
+        style={
+         {
+          position: 'fixed',
+          right: 20,
+          bottom: 20,
+          background: '#008837',
+          }
+        }
+      >
+          <FontAwesomeIcon icon={faCircleArrowUp} />
+        </button>
+    )}
     </div>
   );
 }
