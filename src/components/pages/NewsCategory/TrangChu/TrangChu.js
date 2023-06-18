@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useRef, useState, useEffect } from "react";
 import css from "./TrangChu.module.scss";
 import { useRssFeed } from "../../../../data/useRssFeed";
 import DataSideBar from "./data/SideBarData";
@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { handleString } from "../../../toolkit/handleString";
 import SearchContext from "../../Header/SearchContext";
 import qc_tiger from "../TrangChu/img/qc_tiger.png";
+import qc_myPham from "../TrangChu/img/lazada.jpg";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faComments} from "@fortawesome/free-solid-svg-icons";
 import {faCity} from "@fortawesome/free-solid-svg-icons";
@@ -27,6 +28,7 @@ function TrangChu() {
   const [typeNN, setTypeNN] = useState("thi-truong-nong-san-1123");
   const [typeTTh, setTypeTTh] = useState("bong-da-1036");
   const [typePL, setTypePL] = useState("an-ninh-trat-tu-1068");
+  
   const [typeKT, setTypeKT] = useState("goc-nhin-chuyen-gia-1127");
 
   //nhận vào một thể loại lấy ra ds
@@ -118,42 +120,65 @@ function TrangChu() {
   const listTG = filteredFeedTG.slice(0,5);
   const listNN = filteredFeedNN.slice(0,5);
   const listTTh = filteredFeedTTh.slice(0,5);
-  const listPL = filteredFeedPL.slice(0,5);
+  const listPL = filteredFeedPL.slice(0,6);
+
+  // de xuat báo kinh tế
+  const handleSelectChange = (event) => {
+    const selectedPath = event.target.value;
+    setTypeKT(selectedPath);
+  };
+  
+  // set TimeSwiper
+  const swiperRef = useRef(null);
+
+  useEffect(() => {
+    const swiper = swiperRef.current.swiper;
+    const timer = setInterval(() => {
+      if (swiper) {
+        swiper.slideNext();
+        swiper.on('reachEnd', () => {
+          swiper.slideToLoop(0);
+        });
+      }
+      
+    }, 2000);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
 
   return (
     <div className={css["wrapper"]}>
       <div className={css["wrapperHome"]}>
         <div className={css["swipper-size"]}>
         <Swiper
+      ref={swiperRef}
       spaceBetween={50}
       slidesPerView={1}
-      // navigation
-      // pagination={{ clickable: true }}
-      // scrollbar={{ draggable: true }}
       onSlideChange={() => console.log('slide change')}
       onSwiper={(swiper) => console.log(swiper)}
-      >
-      {filteredFeed.map((post, index) => (
-        <SwiperSlide  key={index}>
+    >
+      {listTitle.map((post, index) => (
+        <SwiperSlide key={index}>
           <div className={css['swiper-size']}>
-          <Link
-              style={{ color: "#333" }}
+            <Link
+              style={{ color: '#333' }}
               key={index}
               to={`/detail/${handleString(post.link)}`}
             >
-                <div className={css["block-content"]}>
-                  <h3 className={css["content-title"]}>{post.title}</h3>
-                </div>
-                <img className={css["image-item"]}
-                  src={post.imageUrl}
-                  alt={post.title}
-                  />
+              <div className={css['block-content']}>
+                <h3 className={css['content-title']}>{post.title}</h3>
+              </div>
+              <img
+                className={css['image-item']}
+                src={post.imageUrl}
+                alt={post.title}
+              />
             </Link>
           </div>
         </SwiperSlide>
-            
-          ))}
-     
+      ))}
     </Swiper>
         </div>
     <div className={css["content-note"]}>
@@ -374,18 +399,18 @@ function TrangChu() {
       {/* Quang cao */}
       <div className={css["widget"]}>
         <div className={css["title-top"]}>
-          Thực phẩm & Đồ uống
+          Săn Sell & Mua Sắm
         </div>
         <div className={css["item"]}>
           <div className={css["box-img"]}>
             <img className={css["image-item"]}
-                  src={qc_tiger}
+                  src={qc_myPham}
             />
           </div>
           <div className={css["box-title"]}>
-            <a href="https://www.facebook.com/TuborgVietnam">
+            <a href="https://www.lazada.vn/shop/unilever-cham-soc-ve-dep">
               <div className={css["wrap-title-news"]}>
-                <h3 className={css["count"]}>Nghiêng Chiều Nào Vui Chiều Đó </h3>
+                <h3 className={css["count"]}>Unilever Chăm Sóc Vẻ Đẹp - Sale giảm sốc giữa tháng</h3>
                 <div className={css["comment-wrap"]}>
                   <FontAwesomeIcon icon={faComments} />
                 </div>
@@ -399,14 +424,13 @@ function TrangChu() {
       <div className={css["bm_IY"]}>
         <h3 className={css["bm_H"]}><FontAwesomeIcon icon={faCity}/> Kinh Tế</h3>
       </div>
-      <select>
+      <select value={typeKT} onChange={handleSelectChange}>
         {
           data.map((opt, index)=>
           <option 
             key={index}
-            onClick={() => {
-              setType(opt.type);
-          }}>
+            value={opt.type}
+           >
             {opt.title}
           </option>)
         }
