@@ -120,47 +120,96 @@
 }
 }
 
-.part-2 {
-  border-right: 3px solid #008837;
-.title-top {
-  width: 115px;
-  margin: 10px;
-  border-left: 5px solid #008837;
-  border-bottom: 2px solid #008837;
-  font-weight: 700;
-  text-align: center;
-}
-
-.home-boxlist {
-  list-style: none;
-  width: 800px;
-  .item-boxlist {
-    display: flex;
-    padding-bottom: 25px;
-    margin-bottom: 18px;
-    border-bottom: 2px solid #eee;  
-
-    .image-item-list {
-      width: 250px;
-      height: 156px;
-      flex-shrink: 0;
-      margin-right: 15px;
+.box {
+  width: max-content;
+  display: flex;
+  .container-two {
+    width: 750px;
+    // border-right: 3px solid #008837;
+    .part-2 {
+    .title-top {
+      width: 115px;
+      margin: 10px;
+      border-left: 5px solid #008837;
+      border-bottom: 2px solid #008837;
+      font-weight: 700;
+      text-align: center;
     }
-
-    .title-box {
-      
-      .wrap-title-news {
-        .small-title-XL {
-          padding-top: 20px;
-          font-family: Arial, Helvetica, sans-serif;
-          font-size: 20px;
-          font-weight: 600;
+    
+    .home-boxlist {
+      list-style: none;
+      width: 800px;
+      .item-boxlist {
+        display: flex;
+        padding-bottom: 25px;
+        margin-bottom: 18px;
+        border-bottom: 2px solid #eee;  
+    
+        .image-item-list {
+          width: 250px;
+          height: 156px;
+          flex-shrink: 0;
+          margin-right: 15px;
         }
-        .pub-date {
-          color: #49b3e9;
+    
+        .title-box {
+          
+          .wrap-title-news {
+            .small-title-XL {
+              padding-top: 20px;
+              font-family: Arial, Helvetica, sans-serif;
+              font-size: 20px;
+              font-weight: 600;
+            }
+            .pub-date {
+              color: #49b3e9;
+            }
+          }
         }
+      }
+    }
+    }
+  }
+  .adscode{
+    padding-left: 54px;
+    width: 354px;
+    position: relative;
+    z-index: 0;
+    .advertise{
+      border-top: 1px solid #008837;
+      border-bottom: 1px solid #008837;
+      span{    
+      color: #008837!important;
+      font-weight: 600;
+      font-size: 9px!important;
+      z-index: 1;
+      position: relative;
+      background: transparent!important;
+      padding-top: 4px;
+      border-top-left-radius: 10px;
+      line-height: 8px;
+      padding-right: 8px;
+      text-transform: capitalize;
+      }
+    }
+  
+  }
+  .bm_AR {
+    background: #fef9e6;
+    padding: 15px;
+    min-height: 800px;
+    .bm_IY {
+    
+      .bm_H {
+        margin-bottom: 12px;
+        line-height: 24px;
+        font-weight: 600;
+        display: block;
+        font-size: 18px;
+        margin-right: 10px;
+        color: #db562b;
       }
     }
   }
 }
-}
+
