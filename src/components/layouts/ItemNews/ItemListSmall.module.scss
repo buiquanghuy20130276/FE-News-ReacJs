@@ -1,0 +1,38 @@
+
+  .content-list {
+    width: 280px;
+    list-style-type: none;
+    padding: 5px;
+  
+    .content-item {
+        display: flex;
+        width: 100%;
+        border-bottom: 1px solid #eee;
+        margin: 5px -5px;
+      .img-content-item {
+        width: 80px;
+        height: 80px;
+        margin-top: 3px;
+      }
+  
+      .block-content-item {
+        margin-left: 10px;
+        
+      }
+    }
+  
+    h3 {
+        font-size: 13px;
+        font-weight: 600;
+    }
+    .pub-date {
+      display: flex;
+      font-size: 12px;
+      justify-content: flex-end;
+      margin-right: 25px;
+    }
+  }
+  
+  
+  
+  
